@@ -1,0 +1,9 @@
+Project plan
+
+2/11  Create jsp pages for home page, game list, and singular game page and java beans for 3 seperate databases; run database, tech database, and user database
+
+2/18 add ability to create an account on the website, create record submission page, create sql statements in order to create the database, create the tables, and insert default data. 
+
+2/25  create search engine, servlet to grab the data and java class to run search query on game add code for the homepage to display the most recently added records
+
+
