@@ -9,16 +9,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <nav>
-        <a href="index.jsp">ScaryGames.com</a>
-        <a href="">Games List</a>
-        <a href="">Tech Videos</a>
-        <form action="" method="get">
-            <input type="text" name="search" id="search">
-        </form>
-        <a href="">Log In</a>
-        <a href="">Sign Up</a>
-    </nav>
+    <%@ include file="navbar.jsp"%>
+
     <main>
         <section>
             <h2>Top Runs</h2>
