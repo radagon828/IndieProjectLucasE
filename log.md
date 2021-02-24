@@ -13,4 +13,4 @@ Tasks Completed:
 - Created search servlet
 - added hibernate annotations to javabeans
 
-I think I'm going to prioritize gettinng the database relationships in order
+I think I'm going to prioritize getting the database relationships in order

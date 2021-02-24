@@ -1,16 +1,38 @@
-package model;
+package entity;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * The type Run.
  */
 public class Run {
-    private String id;
-    private String game;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
+    private int id;
+
+    private int gameId;
+
+    @Column(name = "category")
     private String category;
-    private String user;
+
+    private int userId;
+
+    @Column(name = "time")
     private double time;
+
+    @Column(name = "platform")
     private String platform;
+
+    @Column(name = "date")
     private String date;
+
+    @Column(name = "video_link")
     private String videoLink;
 
     /**
@@ -18,7 +40,7 @@ public class Run {
      *
      * @return the id
      */
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -27,26 +49,26 @@ public class Run {
      *
      * @param id the id
      */
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
     /**
-     * Gets game.
+     * Gets gameId.
      *
-     * @return the game
+     * @return the gameId
      */
-    public String getGame() {
-        return game;
+    public int getGameId() {
+        return gameId;
     }
 
     /**
      * Sets game.
      *
-     * @param game the game
+     * @param gameId the game
      */
-    public void setGame(String game) {
-        this.game = game;
+    public void setGame(int gameId) {
+        this.gameId = gameId;
     }
 
     /**
@@ -68,21 +90,21 @@ public class Run {
     }
 
     /**
-     * Gets user.
+     * Gets user id.
      *
-     * @return the user
+     * @return the user id
      */
-    public String getUser() {
-        return user;
+    public int getUserId() {
+        return userId;
     }
 
     /**
-     * Sets user.
+     * Sets user id.
      *
-     * @param user the user
+     * @param userId the user id
      */
-    public void setUser(String user) {
-        this.user = user;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     /**
@@ -156,6 +178,7 @@ public class Run {
     public void setVideoLink(String videoLink) {
         this.videoLink = videoLink;
     }
+
 
 
 }
