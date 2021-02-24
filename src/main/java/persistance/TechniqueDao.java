@@ -1,7 +1,6 @@
 package persistance;
 
-import entity.Game;
-import entity.Run;
+import entity.Technique;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -13,74 +12,74 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-public class RunDao {
+public class TechniqueDao {
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
     /**
-     * Get run by id
+     * Get technique by id
      */
-    public Run getById(int id) {
+    public Technique getById(int id) {
         Session session = sessionFactory.openSession();
-        Run run = session.get( Run.class, id );
+        Technique technique = session.get( Technique.class, id );
         session.close();
-        return run;
+        return technique;
     }
 
     /**
-     * update run
-     * @param run
+     * update technique
+     * @param technique
      */
-    public void saveOrUpdate(Run run) {
+    public void saveOrUpdate(Technique technique) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.saveOrUpdate(run);
+        session.saveOrUpdate(technique);
         transaction.commit();
         session.close();
     }
 
     /**
-     * insert run
-     * @param run
+     * insert Technique
+     * @param technique
      */
-    public int insert(Run run) {
+    public int insert(Technique technique) {
         int id = 0;
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        id = (int)session.save(run);
+        id = (int)session.save(technique);
         transaction.commit();
         session.close();
         return id;
     }
 
     /**
-     * Delete a run
-     * @param run Run to be deleted
+     * Delete a technique
+     * @param technique Technique to be deleted
      */
-    public void delete(Run run) {
+    public void delete(Technique technique) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(run);
+        session.delete(technique);
         transaction.commit();
         session.close();
     }
 
-    /** Return a list of all the runs
+    /** Return a list of all the techniques
      *
-     * @return All submitted runs
+     * @return All techniques
      */
-    public List<Run> getAll() {
+    public List<Technique> getAll() {
 
         Session session = sessionFactory.openSession();
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Run> query = builder.createQuery( Run.class );
-        Root<Run> root = query.from( Run.class );
-        List<Run> runs = session.createQuery( query ).getResultList();
+        CriteriaQuery<Technique> query = builder.createQuery( Technique.class );
+        Root<Technique> root = query.from( Technique.class );
+        List<Technique> techniques = session.createQuery( query ).getResultList();
 
-        logger.debug("The list of submitted runs " + runs);
+        logger.debug("The list of Technique submissions " + techniques);
         session.close();
 
-        return runs;
+        return techniques;
     }
 }

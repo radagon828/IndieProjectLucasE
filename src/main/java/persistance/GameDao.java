@@ -66,9 +66,9 @@ public class GameDao {
         session.close();
     }
 
-    /** Return a list of all the authors
+    /** Return a list of all the users
      *
-     * @return All Authors
+     * @return All games
      */
     public List<Game> getAll() {
 

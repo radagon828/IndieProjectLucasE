@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS `Game`;
 DROP TABLE IF EXISTS `Run`;
 DROP TABLE IF EXISTS `Technique`;
+DROP TABLE IF EXISTS `Game`;
 DROP TABLE IF EXISTS `User`;
 -- tables
 -- Table: Game
@@ -20,7 +20,7 @@ CREATE TABLE Run (
                      user_id int NOT NULL,
                      time double(8,2) NOT NULL,
     platform varchar(20) NOT NULL,
-    date date NOT NULL,
+    date datetime NOT NULL,
     video_link varchar(100) NOT NULL,
     CONSTRAINT Run_pk PRIMARY KEY (run_id)
 );
@@ -33,6 +33,7 @@ CREATE TABLE Technique (
                            title varchar(50) NOT NULL,
                            description varchar(300) NOT NULL,
                            video_link varchar(100) NOT NULL,
+                           submission_date datetime NOT NULL,
                            CONSTRAINT Technique_pk PRIMARY KEY (tech_id)
 );
 

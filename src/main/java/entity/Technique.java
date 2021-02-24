@@ -27,6 +27,9 @@ public class Technique {
     @Column(name = "video_link")
     private String videoLink;
 
+    @Column(name = "submission_date")
+    private String submissionDate;
+
     /**
      * Gets tech id.
      *
@@ -97,5 +100,23 @@ public class Technique {
      */
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    /**
+     * Gets submission date.
+     *
+     * @return the submission date
+     */
+    public String getSubmissionDate() {
+        return submissionDate;
+    }
+
+    /**
+     * Sets submission date.
+     *
+     * @param submissionDate the submission date
+     */
+    public void setSubmissionDate(String submissionDate) {
+        this.submissionDate = submissionDate;
     }
 }
