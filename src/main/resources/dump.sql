@@ -40,6 +40,7 @@ CREATE TABLE Technique (
 -- Table: User
 CREATE TABLE User (
                       user_id int NOT NULL,
+                      user_email varchar(40) NOT NULL,
                       username varchar(30) NOT NULL,
                       password varchar(40) NOT NULL,
                       CONSTRAINT User_pk PRIMARY KEY (user_id)
