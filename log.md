@@ -14,3 +14,10 @@ Tasks Completed:
 - added hibernate annotations to javabeans
 
 I think I'm going to prioritize getting the database relationships in order
+
+### Week 6
+
+Tasks Completed:
+- Got unit testing to work for one entity
+
+I have learned a lot of things, such as the fact that the clean db file needs to have insert statements on one line and that hibernate needs to have all primary keys be named id for some reason. 
