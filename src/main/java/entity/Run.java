@@ -19,7 +19,7 @@ public class Run {
     private String category;
 
     @Column(name = "time")
-    private double time;
+    private String time;
 
     @Column(name = "platform")
     private String platform;
@@ -48,7 +48,7 @@ public class Run {
      * @param videoLink the video link
      * @param game      the game
      */
-    public Run(String category, double time, String platform, String date, String videoLink, Game game) {
+    public Run(String category, String time, String platform, String date, String videoLink, Game game) {
         this.category = category;
         this.time = time;
         this.platform = platform;
@@ -105,7 +105,7 @@ public class Run {
      *
      * @return the time
      */
-    public double getTime() {
+    public String getTime() {
         return time;
     }
 
@@ -114,7 +114,7 @@ public class Run {
      *
      * @param time the time
      */
-    public void setTime(double time) {
+    public void setTime(String time) {
         this.time = time;
     }
 

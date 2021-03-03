@@ -22,8 +22,8 @@ public class GameDaoTest {
     @BeforeEach
     void setUp() {
 
-//        Database database = Database.getInstance();
-//        database.runSQL("cleandb.sql");
+        Database database = Database.getInstance();
+        database.runSQL("cleandb.sql");
 
         dao = new GameDao();
     }
@@ -55,7 +55,6 @@ public class GameDaoTest {
      */
     @Test
     void updateSuccess() {
-//        String author = "John Smith";
         Game gameToUpdate = dao.getById(2);
         gameToUpdate.setDescription("Not Developed By Capcom");
         dao.saveOrUpdate(gameToUpdate);

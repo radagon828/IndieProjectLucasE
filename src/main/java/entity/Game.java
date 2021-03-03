@@ -91,24 +91,6 @@ public class Game {
     }
 
     /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
      * Gets title.
      *
      * @return the title
@@ -200,5 +182,13 @@ public class Game {
     public void removeTechnique(Technique technique) {
         techniques.remove(technique);
         technique.setGame(null);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int game_id) {
+        this.id = game_id;
     }
 }

@@ -8,10 +8,12 @@ import java.util.Set;
 @Entity(name = "User")
 @Table(name = "user")
 public class User {
+
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
-    private int userId;
+    private int id;
 
     @Column(name = "username")
     private String userName;
@@ -32,20 +34,12 @@ public class User {
 
     }
 
-    /**
-     * returns the value of the user's id
-     * @return userId
-     */
-    public int getUserId() {
-        return userId;
+    public int getId() {
+        return id;
     }
 
-    /**
-     * sets the value of the user id
-     * @param userId
-     */
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**

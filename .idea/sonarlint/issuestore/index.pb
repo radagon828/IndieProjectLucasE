@@ -19,8 +19,6 @@ L
 src/main/webapp/gameList.jsp,0/5/05b8a70ee442c9241aad31a14f4015011aca5169
 Q
 !src/main/webapp/runSubmission.jsp,2/2/22055203f03da29696c3fa1db0997d791bf62959
-R
-"src/main/java/servlets/Search.java,5/7/57d888898b5801135b34cd0fd5bf00c77d93d7d0
 6
 log.md,6/9/6926fe5fc4bdba33ee15b5d12da221ee3eef6702
 S
@@ -36,3 +34,15 @@ P
  Code Reviews/jholmquestReview.md,1/7/17c2ff284136a6d103c9d95b9ccbdd292e40546a
 N
 Code Reviews/ctkrauseReview.md,1/1/111688d38021fd30dfa33f960e61e01b2b6e19b0
+U
+%src/main/java/persistance/RunDao.java,7/4/749fed4a83c07a3f871c141f1d5439fc6fa2dc2f
+V
+&src/main/java/persistance/UserDao.java,3/8/38fbe133666758f0be4534341db3b013c4a129bc
+U
+%src/test/java/testUtils/Database.java,4/7/47ea3176ac0684e58a5411e4732e41e8fee341c2
+N
+src/main/java/entity/User.java,b/a/ba7ac8670f3f87adc8663aab792e9f47d90839bc
+N
+src/main/java/entity/Game.java,1/5/158fc47d6fbd5e4e48094dd08d44c29667fd94ec
+Z
+*src/test/java/persistance/GameDaoTest.java,4/e/4eae444fa59005298bed3bdbe3cb73a3496940cf

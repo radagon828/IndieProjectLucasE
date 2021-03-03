@@ -13,7 +13,7 @@ public class Technique {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
-    private int techId;
+    private int id;
 
     @Column(name = "title")
     private String title;
@@ -54,22 +54,12 @@ public class Technique {
 
     }
 
-    /**
-     * Gets tech id.
-     *
-     * @return the tech id
-     */
-    public int getTechId() {
-        return techId;
+    public int getId() {
+        return id;
     }
 
-    /**
-     * Sets tech id.
-     *
-     * @param techId the tech id
-     */
-    public void setTechId(int techId) {
-        this.techId = techId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -179,4 +169,6 @@ public class Technique {
     public void setUser(User user) {
         this.user = user;
     }
+
+
 }
