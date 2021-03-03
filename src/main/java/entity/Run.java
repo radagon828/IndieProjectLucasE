@@ -2,10 +2,7 @@ package entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * The type Run.
@@ -16,12 +13,8 @@ public class Run {
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
 
-    private int gameId;
-
     @Column(name = "category")
     private String category;
-
-    private int userId;
 
     @Column(name = "time")
     private double time;
@@ -34,6 +27,38 @@ public class Run {
 
     @Column(name = "video_link")
     private String videoLink;
+
+    @ManyToOne
+    private Game game;
+
+    @ManyToOne
+    private User user;
+
+    /**
+     * Instantiates a new Run.
+     *
+     * @param category  the category
+     * @param time      the time
+     * @param platform  the platform
+     * @param date      the date
+     * @param videoLink the video link
+     * @param game      the game
+     */
+    public Run(String category, double time, String platform, String date, String videoLink, Game game) {
+        this.category = category;
+        this.time = time;
+        this.platform = platform;
+        this.date = date;
+        this.videoLink = videoLink;
+        this.game = game;
+    }
+
+    /**
+     * Instantiates a new Run.
+     */
+    public Run() {
+
+    }
 
     /**
      * Gets id.
@@ -54,24 +79,6 @@ public class Run {
     }
 
     /**
-     * Gets gameId.
-     *
-     * @return the gameId
-     */
-    public int getGameId() {
-        return gameId;
-    }
-
-    /**
-     * Sets game.
-     *
-     * @param gameId the game
-     */
-    public void setGame(int gameId) {
-        this.gameId = gameId;
-    }
-
-    /**
      * Gets category.
      *
      * @return the category
@@ -87,24 +94,6 @@ public class Run {
      */
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    /**
-     * Gets user id.
-     *
-     * @return the user id
-     */
-    public int getUserId() {
-        return userId;
-    }
-
-    /**
-     * Sets user id.
-     *
-     * @param userId the user id
-     */
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     /**
@@ -179,6 +168,40 @@ public class Run {
         this.videoLink = videoLink;
     }
 
+    /**
+     * Gets game.
+     *
+     * @return the game
+     */
+    public Game getGame() {
+        return game;
+    }
 
+    /**
+     * Sets game.
+     *
+     * @param game the game
+     */
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
+    public void setUser(User user) {
+        this.user = user;
+    }
 
 }

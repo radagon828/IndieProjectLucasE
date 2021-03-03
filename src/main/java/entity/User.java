@@ -2,10 +2,8 @@ package entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 public class User {
     @Id
@@ -18,6 +16,12 @@ public class User {
 
     @Column(name = "password")
     private String password;
+
+    @OneToMany(mappedBy = "User", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Run> runs;
+
+    @OneToMany(mappedBy = "User", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Technique> techniques;
 
     /**
      * instantiates a user class
@@ -73,5 +77,45 @@ public class User {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * Add run.
+     *
+     * @param run the run
+     */
+    public void addRun(Run run) {
+        runs.add(run);
+        run.setUser(this);
+    }
+
+    /**
+     * Remove book.
+     *
+     * @param run the run
+     */
+    public void removeRun(Run run) {
+        runs.remove(run);
+        run.setUser(null);
+    }
+
+    /**
+     * Add technique.
+     *
+     * @param technique the technique
+     */
+    public void addTechnique(Technique technique) {
+        techniques.add(technique);
+        technique.setUser(this);
+    }
+
+    /**
+     * Remove technique.
+     *
+     * @param technique the technique
+     */
+    public void removeTechnique(Technique technique) {
+        techniques.remove(technique);
+        technique.setUser(null);
     }
 }

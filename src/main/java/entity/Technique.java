@@ -2,10 +2,7 @@ package entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * The type Technique.
@@ -15,8 +12,6 @@ public class Technique {
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
     private int techId;
-
-    private int userId;
 
     @Column(name = "title")
     private String title;
@@ -29,6 +24,13 @@ public class Technique {
 
     @Column(name = "submission_date")
     private String submissionDate;
+
+    @ManyToOne
+    private Game game;
+
+    @ManyToOne
+    private User user;
+
 
     /**
      * Gets tech id.
@@ -118,5 +120,41 @@ public class Technique {
      */
     public void setSubmissionDate(String submissionDate) {
         this.submissionDate = submissionDate;
+    }
+
+    /**
+     * Gets game.
+     *
+     * @return the game
+     */
+    public Game getGame() {
+        return game;
+    }
+
+    /**
+     * Sets game.
+     *
+     * @param game the game
+     */
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
+    public void setUser(User user) {
+        this.user = user;
     }
 }
