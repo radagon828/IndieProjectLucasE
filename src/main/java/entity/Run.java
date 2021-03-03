@@ -7,6 +7,8 @@ import javax.persistence.*;
 /**
  * The type Run.
  */
+@Entity(name = "Run")
+@Table(name = "run")
 public class Run {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
@@ -29,9 +31,11 @@ public class Run {
     private String videoLink;
 
     @ManyToOne
+    @JoinColumn(name="game_id")
     private Game game;
 
     @ManyToOne
+    @JoinColumn(name="user_id")
     private User user;
 
     /**

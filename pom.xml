@@ -23,19 +23,19 @@
   </properties>
 
   <dependencies>
-    <!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate/hibernate-core &ndash;&gt;-->
-    <!--    <dependency>-->
-    <!--      <groupId>org.hibernate</groupId>-->
-    <!--      <artifactId>hibernate-core</artifactId>-->
-    <!--      <version>${hibernate-version}</version>-->
-    <!--    </dependency>-->
-    <!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 &ndash;&gt;-->
-    <!--    <dependency>-->
-    <!--      <groupId>org.hibernate</groupId>-->
-    <!--      <artifactId>hibernate-c3p0</artifactId>-->
-    <!--      <version>${hibernate-version}</version>-->
-    <!--    </dependency>-->
-    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate/hibernate-core &ndash;&gt;-->
+<!--        <dependency>-->
+<!--          <groupId>org.hibernate</groupId>-->
+<!--          <artifactId>hibernate-core</artifactId>-->
+<!--          <version>${hibernate-version}</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--          <groupId>org.hibernate</groupId>-->
+<!--          <artifactId>hibernate-c3p0</artifactId>-->
+<!--          <version>${hibernate-version}</version>-->
+<!--        </dependency>-->
+<!--     https://mvnrepository.com/artifact/org.hibernate/hibernate-core-->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>

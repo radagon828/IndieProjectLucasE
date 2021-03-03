@@ -2,6 +2,7 @@ package persistance;
 
 
 import entity.Game;
+import entity.Run;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import testUtils.Database;
@@ -10,22 +11,19 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-//  remember to test that books can be added when adding an author
-// test that when an author is deleted, all associated books are deleted
+
 public class GameDaoTest {
 
     GameDao dao;
 
     /**
-     * Run set up tasks before each test:
-     * 1. execute sql which deletes everything from the table and inserts records)
-     * 2. Create any objects needed in the tests
+     * Sets up.
      */
     @BeforeEach
     void setUp() {
 
-        Database database = Database.getInstance();
-        database.runSQL("cleandb.sql");
+//        Database database = Database.getInstance();
+//        database.runSQL("cleandb.sql");
 
         dao = new GameDao();
     }
@@ -45,28 +43,28 @@ public class GameDaoTest {
      */
     @Test
     void insertSuccess() {
-        Game newAuthor= new Author( "Lucas", "Eddy");
-        int id = dao.insert(newAuthor);
+        Game newGame = new Game( "Resident Evil 2(1998)", "Developed By Capcom", "imgpath");
+        int id = dao.insert(newGame);
         assertNotEquals(0,id);
-        Author insertedAuthor = dao.getById(id);
-        assertEquals("Lucas", insertedAuthor.getFirstName());
+        Game insertedGame = dao.getById(id);
+        assertEquals("Resident Evil 2(1998)", insertedGame.getTitle());
     }
 
     /**
-     * Verify successful update of a Book
+     * Verify successful update of a Game
      */
     @Test
     void updateSuccess() {
 //        String author = "John Smith";
-        Author authorToUpdate = dao.getById(2);
-        authorToUpdate.setFirstName("John");
-        dao.saveOrUpdate(authorToUpdate);
-        Author authorAfterUpdate = dao.getById(2);
-        assertEquals("John", authorAfterUpdate.getFirstName());
+        Game gameToUpdate = dao.getById(2);
+        gameToUpdate.setDescription("Not Developed By Capcom");
+        dao.saveOrUpdate(gameToUpdate);
+        Game gameAfterUpdate = dao.getById(2);
+        assertEquals("Not Developed By Capcom", gameAfterUpdate.getDescription());
     }
 
     /**
-     * Verify successful delete of Book
+     * Verify successful delete of Game
      */
     @Test
     void deleteSuccess() {
@@ -75,22 +73,22 @@ public class GameDaoTest {
     }
 
     /**
-     * verify that a book with the deleted author id was deleted
+     * verify that a run with the deleted gameId was deleted
      */
     @Test
     void cascadeDeleteSuccess() {
-        BookDao bookDao = new BookDao();
-        Book book = bookDao.getById(2);
-        dao.delete(dao.getById(2));
-        assertNull(dao.getById(2));
-        assertNull(bookDao.getById(3));
+        RunDao runDao = new RunDao();
+        Run run = runDao.getById(1);
+        dao.delete(dao.getById(5));
+        assertNull(dao.getById(5));
+        assertNull(run);
     }
     /**
-     * Verify successful retrieval of all authors
+     * Verify successful retrieval of all games
      */
     @Test
     void getAllSuccess() {
-        List<Author> authors = dao.getAll();
-        assertEquals(3, authors.size());
+        List<Game> games = dao.getAll();
+        assertEquals(5, games.size());
     }
 }

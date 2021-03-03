@@ -1,28 +1,26 @@
-DELETE FROM Run;
-DELETE FROM Technique;
-DELETE FROM Game;
-DELETE FROM User;
+delete FROM run;
+delete FROM technique;
+delete FROM game;
+delete FROM user;
 
-INSERT INTO Game (title, description, image_pth)
-VALUES
-('Haunting ground', 'Developed by Capcom', 'imgpath'),
-('Resident Evil(1997)', 'Developed by Capcom', 'imgpath'),
-('Amnesia: Dark Descent', 'Developed by Frictional', 'imgpath'),
-('NightCry', 'Developed by Nude Maker', 'imgpath'),
-('Clock Tower 3', 'Developed by Capcom', 'imgpath');
+INSERT INTO 'game' VALUES
+(1, 'Haunting ground', 'Developed by Capcom', 'imgpath'),
+(2, 'Resident Evil(1997)', 'Developed by Capcom', 'imgpath'),
+(3, 'Amnesia: Dark Descent', 'Developed by Frictional', 'imgpath'),
+(4, 'NightCry', 'Developed by Nude Maker', 'imgpath'),
+(5, 'Clock Tower 3', 'Developed by Capcom', 'imgpath');
 
-INSERT INTO User (username, user_email, password)
-VALUES
-('sonic', 'userone@gmail.com', '11111'),
-('carci', 'usertwo@gmail.com', '11112'),
-('darkflash', 'userthree@gmail.com', '11113'),
-('fourr', 'userfour@gmail.com', '11114'),
-('tomato', 'userfive@gmail.com', '11115');
+INSERT INTO 'user' VALUES
+(1, 'sonic', 'userone@gmail.com', '11111'),
+(2, 'carci', 'usertwo@gmail.com', '11112'),
+(3, 'darkflash', 'userthree@gmail.com', '11113'),
+(4, 'fourr', 'userfour@gmail.com', '11114'),
+(5, 'tomato', 'userfive@gmail.com', '11115');
 
 -- //change time data type from double to time
 -- //java.time.LocalDateTime.now()
 
-INSERT INTO Run (game_id, category, user_id, time, platform, date, video_link)
+INSERT INTO 'run' (game_id, category, user_id, time, platform, date, video_link)
     VALUE
     (5, 'Normal Mode, Any%', 1, '1:17:52', 'PS2', now(), 'https://www.youtube.com/watch?v=_81rRLpYFBU'),
     (5, 'Normal Mode, Any%', 2, '1:18:03', 'PS2', now(), 'https://www.youtube.com/watch?v=IrqbMGFNnlQ'),

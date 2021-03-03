@@ -7,6 +7,8 @@ import javax.persistence.*;
 /**
  * The type Technique.
  */
+@Entity(name = "Technique")
+@Table(name = "technique")
 public class Technique {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
@@ -26,11 +28,31 @@ public class Technique {
     private String submissionDate;
 
     @ManyToOne
+    @JoinColumn(name="game_id")
     private Game game;
 
     @ManyToOne
+    @JoinColumn(name="user_id")
     private User user;
 
+    /**
+     * Instantiates a new Technique.
+     *
+     * @param title          the title
+     * @param description    the description
+     * @param videoLink      the video link
+     * @param submissionDate the submission date
+     */
+    public Technique(String title, String description, String videoLink, String submissionDate) {
+        this.title = title;
+        this.description = description;
+        this.videoLink = videoLink;
+        this.submissionDate = submissionDate;
+    }
+
+    public Technique() {
+
+    }
 
     /**
      * Gets tech id.

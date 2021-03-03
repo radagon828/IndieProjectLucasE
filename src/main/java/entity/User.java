@@ -5,6 +5,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Set;
 
+@Entity(name = "User")
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
@@ -17,10 +19,10 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "User", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Run> runs;
 
-    @OneToMany(mappedBy = "User", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Technique> techniques;
 
     /**

@@ -8,6 +8,8 @@ import java.util.Set;
 /**
  * The type Game.
  */
+@Entity(name = "Game")
+@Table(name = "game")
 public class Game {
 
     @Id
@@ -23,6 +25,12 @@ public class Game {
 
     @Column(name = "image_pth")
     private String imagePth;
+
+    @OneToMany(mappedBy = "game", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Run> runs;
+
+    @OneToMany(mappedBy = "game", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Technique> techniques;
 
     /**
      * Gets runs.
@@ -60,11 +68,7 @@ public class Game {
         this.techniques = techniques;
     }
 
-    @OneToMany(mappedBy = "Game", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Run> runs;
 
-    @OneToMany(mappedBy = "Game", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Technique> techniques;
 
     /**
      * Instantiates a new Game.

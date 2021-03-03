@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS `Run`;
-DROP TABLE IF EXISTS `Technique`;
-DROP TABLE IF EXISTS `Game`;
-DROP TABLE IF EXISTS `User`;
+DROP TABLE IF EXISTS `run`;
+DROP TABLE IF EXISTS `technique`;
+DROP TABLE IF EXISTS `game`;
+DROP TABLE IF EXISTS `user`;
 -- tables
 -- Table: Game
-CREATE TABLE Game (
+CREATE TABLE game (
                       game_id int NOT NULL AUTO_INCREMENT,
                       title varchar(40) NOT NULL,
                       description varchar(200) NOT NULL,
@@ -13,20 +13,20 @@ CREATE TABLE Game (
 );
 
 -- Table: Run
-CREATE TABLE Run (
+CREATE TABLE run (
                      run_id int NOT NULL AUTO_INCREMENT,
                      game_id int NOT NULL,
                      category varchar(25) NOT NULL,
                      user_id int NOT NULL,
                      time time NOT NULL,
-    platform varchar(20) NOT NULL,
-    date datetime NOT NULL,
-    video_link varchar(100) NOT NULL,
-    CONSTRAINT Run_pk PRIMARY KEY (run_id)
+                     platform varchar(20) NOT NULL,
+                     date datetime NOT NULL,
+                     video_link varchar(100) NOT NULL,
+                     CONSTRAINT Run_pk PRIMARY KEY (run_id)
 );
 
 -- Table: Technique
-CREATE TABLE Technique (
+CREATE TABLE technique (
                            tech_id int NOT NULL AUTO_INCREMENT,
                            user_id int NOT NULL,
                            game_id int NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE Technique (
 );
 
 -- Table: User
-CREATE TABLE User (
+CREATE TABLE user (
                       user_id int NOT NULL AUTO_INCREMENT,
                       user_email varchar(40) NOT NULL,
                       username varchar(30) NOT NULL,
@@ -48,17 +48,17 @@ CREATE TABLE User (
 
 -- foreign keys
 -- Reference: Run_Game (table: Run)
-ALTER TABLE Run ADD CONSTRAINT Run_Game FOREIGN KEY Run_Game (game_id)
-    REFERENCES Game (game_id);
+ALTER TABLE run ADD CONSTRAINT run_game FOREIGN KEY run_game (game_id)
+    REFERENCES game (game_id);
 
 -- Reference: Run_User (table: Run)
-ALTER TABLE Run ADD CONSTRAINT Run_User FOREIGN KEY Run_User (user_id)
-    REFERENCES User (user_id);
+ALTER TABLE run ADD CONSTRAINT run_user FOREIGN KEY run_user (user_id)
+    REFERENCES user (user_id);
 
 -- Reference: Technique_Game (table: Technique)
-ALTER TABLE Technique ADD CONSTRAINT Technique_Game FOREIGN KEY Technique_Game (game_id)
-    REFERENCES Game (game_id);
+ALTER TABLE technique ADD CONSTRAINT technique_game FOREIGN KEY technique_game (game_id)
+    REFERENCES game (game_id);
 
 -- Reference: Technique_User (table: Technique)
-ALTER TABLE Technique ADD CONSTRAINT Technique_User FOREIGN KEY Technique_User (user_id)
-    REFERENCES User (user_id);
+ALTER TABLE technique ADD CONSTRAINT technique_user FOREIGN KEY technique_user (user_id)
+    REFERENCES user (user_id);
