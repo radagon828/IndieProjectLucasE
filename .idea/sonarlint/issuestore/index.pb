@@ -30,10 +30,6 @@ V
 timeLog.md,a/d/ad41f39420e77c76bc2101aaabeb1e0d3d7e77e9
 M
 src/main/java/entity/Run.java,d/6/d6da0939c1438840c10aa670325359a83473b172
-P
- Code Reviews/jholmquestReview.md,1/7/17c2ff284136a6d103c9d95b9ccbdd292e40546a
-N
-Code Reviews/ctkrauseReview.md,1/1/111688d38021fd30dfa33f960e61e01b2b6e19b0
 U
 %src/main/java/persistance/RunDao.java,7/4/749fed4a83c07a3f871c141f1d5439fc6fa2dc2f
 V
