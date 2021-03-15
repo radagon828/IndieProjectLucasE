@@ -10,8 +10,8 @@ import javax.servlet.annotation.*;
  *
  */
 @WebServlet(
-        name = "mvcDemo",
-        urlPatterns = { "/mvc-demo" }
+        name = "search",
+        urlPatterns = { "/search" }
 )
 public class Search extends HttpServlet {
 
