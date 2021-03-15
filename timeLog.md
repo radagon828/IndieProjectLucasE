@@ -6,4 +6,5 @@
 |02/24/2021|Added technique bean, added daos with basic CRUD for all beans, added dump.sql file, created database|5|
 |03/02/2021| Added Unit testing for the game entity|7|
 |03/13/2021|Completed week 8 activities|2|
-|03/14/20201|Completed week 8 exercise and began work on checkpoint 3 of my indie project|2|
+|03/14/2021|Completed week 8 exercise and began work on checkpoint 3 of my indie project|2|
+|03/14/2021|Added generic dao to indie project|0.5|
