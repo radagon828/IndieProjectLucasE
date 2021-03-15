@@ -1,6 +1,5 @@
 package persistance;
 
-
 import entity.Game;
 import entity.Run;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,18 +13,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class GameDaoTest {
 
-    GameDao dao;
+    GenericDao dao;
 
     /**
      * Sets up.
      */
     @BeforeEach
     void setUp() {
+        dao = new GenericDao(Game.class);
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
-
-        dao = new GameDao();
     }
 
     /**
@@ -33,7 +31,7 @@ public class GameDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        Game retrievedGame = dao.getById(1);
+        Game retrievedGame = (Game)dao.getById(1);
         assertEquals("Haunting Ground", retrievedGame.getTitle());
 
     }
@@ -46,7 +44,7 @@ public class GameDaoTest {
         Game newGame = new Game( "Resident Evil 2(1998)", "Developed By Capcom", "imgpath");
         int id = dao.insert(newGame);
         assertNotEquals(0,id);
-        Game insertedGame = dao.getById(id);
+        Game insertedGame = (Game)dao.getById(id);
         assertEquals("Resident Evil 2(1998)", insertedGame.getTitle());
     }
 
@@ -55,10 +53,10 @@ public class GameDaoTest {
      */
     @Test
     void updateSuccess() {
-        Game gameToUpdate = dao.getById(2);
+        Game gameToUpdate = (Game)dao.getById(2);
         gameToUpdate.setDescription("Not Developed By Capcom");
         dao.saveOrUpdate(gameToUpdate);
-        Game gameAfterUpdate = dao.getById(2);
+        Game gameAfterUpdate = (Game)dao.getById(2);
         assertEquals("Not Developed By Capcom", gameAfterUpdate.getDescription());
     }
 
@@ -76,8 +74,8 @@ public class GameDaoTest {
      */
     @Test
     void cascadeDeleteSuccess() {
-        RunDao runDao = new RunDao();
-        Run run = runDao.getById(1);
+        GenericDao runDao = new GenericDao(Run.class);
+        Run run = (Run)runDao.getById(1);
         dao.delete(dao.getById(5));
         assertNull(dao.getById(5));
         assertNull(run);

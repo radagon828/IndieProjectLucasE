@@ -62,3 +62,8 @@ ALTER TABLE `technique` ADD CONSTRAINT `technique_game` FOREIGN KEY `technique_g
 -- Reference: Technique_User (table: Technique)
 ALTER TABLE `technique` ADD CONSTRAINT `technique_user` FOREIGN KEY `technique_user` (`user_id`)
     REFERENCES `user` (`id`);
+
+/*!40103 SET GLOBAL TIME_ZONE = '+00:00' */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+
+SELECT @@GLOBAL.time_zone, @@SESSION.time_zone;
