@@ -21,3 +21,19 @@ Tasks Completed:
 - Got unit testing to work for one entity
 
 I have learned a lot of things, such as the fact that the clean db file needs to have insert statements on one line and that hibernate needs to have all primary keys be named id for some reason. 
+
+### Week 7
+
+Tasks Completed:
+-Completed Auth Exercise
+
+I thought i would have to use a method similar to php in order to create admins in my program
+
+### Week 8
+
+Tasks Completed:
+-Completed week 8 activities and exeecise
+-began work on adding my indie project to AWS
+-Began adding auth files to my project
+
+
