@@ -46,6 +46,20 @@ CREATE TABLE `user` (
                         PRIMARY KEY (`id`)
 );
 
+CREATE TABLE role
+(
+    id        INT AUTO_INCREMENT
+        PRIMARY KEY,
+    role_name VARCHAR(25) NOT NULL,
+    user_name VARCHAR(15) NOT NULL,
+    user_id   INT         NOT NULL,
+    CONSTRAINT role_id_uindex
+        UNIQUE (id),
+    CONSTRAINT role_user_user_id_fk
+        FOREIGN KEY (user_id) REFERENCES user (id)
+            ON UPDATE CASCADE
+            ON DELETE CASCADE
+);
 -- foreign keys
 -- Reference: Run_Game (table: Run)
 ALTER TABLE `run` ADD CONSTRAINT `run_game` FOREIGN KEY `run_game` (`game_id`)
@@ -63,7 +77,7 @@ ALTER TABLE `technique` ADD CONSTRAINT `technique_game` FOREIGN KEY `technique_g
 ALTER TABLE `technique` ADD CONSTRAINT `technique_user` FOREIGN KEY `technique_user` (`user_id`)
     REFERENCES `user` (`id`);
 
-/*!40103 SET GLOBAL TIME_ZONE = '+00:00' */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40103 SET GLOBAL TIME_ZONE = 'system' */;
+/*!40103 SET TIME_ZONE='-05:00' */;
 
 SELECT @@GLOBAL.time_zone, @@SESSION.time_zone;

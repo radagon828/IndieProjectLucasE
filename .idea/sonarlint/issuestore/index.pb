@@ -23,17 +23,11 @@ Q
 log.md,6/9/6926fe5fc4bdba33ee15b5d12da221ee3eef6702
 S
 #src/main/java/entity/Technique.java,0/1/01a1e4c7366f4c4095650c234dce41dd1dd3dd0e
-V
-&src/main/java/persistance/GameDao.java,f/e/fe3495b1f74126083716a481d15b53a6ec783bc8
 :
 
 timeLog.md,a/d/ad41f39420e77c76bc2101aaabeb1e0d3d7e77e9
 M
 src/main/java/entity/Run.java,d/6/d6da0939c1438840c10aa670325359a83473b172
-U
-%src/main/java/persistance/RunDao.java,7/4/749fed4a83c07a3f871c141f1d5439fc6fa2dc2f
-V
-&src/main/java/persistance/UserDao.java,3/8/38fbe133666758f0be4534341db3b013c4a129bc
 U
 %src/test/java/testUtils/Database.java,4/7/47ea3176ac0684e58a5411e4732e41e8fee341c2
 N
