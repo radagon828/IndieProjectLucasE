@@ -36,6 +36,11 @@
         <web-resource-collection>
             <web-resource-name>User</web-resource-name>
             <url-pattern>/index.jsp</url-pattern>
+            <url-pattern>/gameList.jsp</url-pattern>
+            <url-pattern>/gamePage.jsp</url-pattern>
+            <url-pattern>/runSubmission.jsp</url-pattern>
+            <url-pattern>/viewVideoPage.jsp</url-pattern>
+            <url-pattern>/navbar.jsp</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>all</role-name>

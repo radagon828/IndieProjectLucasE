@@ -1,4 +1,4 @@
-<Context docBase="scaryrun" path="/IdeaProjects_war" reloadable="true">
+<Context docBase="scaryRun" path="/IdeaProjects_war" reloadable="true">
     <Realm className="org.apache.catalina.realm.JDBCRealm"
            driverName="com.mysql.cj.jdbc.Driver"
            connectionURL="jdbc:mysql://localhost:3306/test_ScaryRuns?user=root&amp;password=student"
