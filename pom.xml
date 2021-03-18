@@ -2,10 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.matc.exercises</groupId>
-  <artifactId>week-4-hibernate-exercise</artifactId>
+  <artifactId>ScaryRuns</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>week-4-hibernate-exercise Maven Webapp</name>
+  <name>ScaryRuns</name>
   <url>http://maven.apache.org</url>
   <properties>
     <hibernate-version>5.4.4.Final</hibernate-version>

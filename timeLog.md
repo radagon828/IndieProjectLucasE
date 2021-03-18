@@ -9,3 +9,4 @@
 |03/14/2021|Completed week 8 exercise and began work on checkpoint 3 of my indie project|2|
 |03/14/2021|Added generic dao to indie project|0.5|
 |03/16/2021|Added authorization files and role table|3|
+|03/18/2021|Fixed time zone errors buy altering the mysqld.cnf file to have a default time zone|3|
