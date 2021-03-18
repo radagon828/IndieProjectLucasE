@@ -60,6 +60,11 @@ CREATE TABLE role
             ON UPDATE CASCADE
             ON DELETE CASCADE
 );
+
+# INSERT INTO role (id, role_name, user_name, user_id) VALUES (1, 'admin', 'carci', 2);
+# INSERT INTO role (id, role_name, user_name, user_id) VALUES (2, 'user', 'sonic', 1);
+
+
 -- foreign keys
 -- Reference: Run_Game (table: Run)
 ALTER TABLE `run` ADD CONSTRAINT `run_game` FOREIGN KEY `run_game` (`game_id`)

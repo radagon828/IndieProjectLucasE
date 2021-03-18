@@ -1,36 +1,36 @@
-<!--<!DOCTYPE web-app PUBLIC-->
-<!-- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"-->
-<!-- "http://java.sun.com/dtd/web-app_2_3.dtd" >-->
+<!--&lt;!&ndash;<!DOCTYPE web-app PUBLIC&ndash;&gt;-->
+<!--&lt;!&ndash; "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"&ndash;&gt;-->
+<!--&lt;!&ndash; "http://java.sun.com/dtd/web-app_2_3.dtd" >&ndash;&gt;-->
 
-<!--<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">-->
-<!--  <display-name>Archetype Created Web Application</display-name>-->
-<!--</web-app>-->
+<!--&lt;!&ndash;<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">&ndash;&gt;-->
+<!--&lt;!&ndash;  <display-name>Archetype Created Web Application</display-name>&ndash;&gt;-->
+<!--&lt;!&ndash;</web-app>&ndash;&gt;-->
 
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
-<display-name>Indie Project</display-name>
+<!--<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"-->
+<!--         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"-->
+<!--         version="3.1">-->
+<!--<display-name>Indie Project</display-name>-->
 
-    <display-name>ScaryRuns</display-name>
-    <login-config>
-        <auth-method>FORM</auth-method>
-        <form-login-config>
-            <form-login-page>/login.jsp</form-login-page>
-            <form-error-page>/failedLogin.jsp</form-error-page>
-        </form-login-config>
-    </login-config>
+<!--    <display-name>ScaryRuns</display-name>-->
+<!--    <login-config>-->
+<!--        <auth-method>FORM</auth-method>-->
+<!--        <form-login-config>-->
+<!--            <form-login-page>/login.jsp</form-login-page>-->
+<!--            <form-error-page>/failedLogin.jsp</form-error-page>-->
+<!--        </form-login-config>-->
+<!--    </login-config>-->
 
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>Auth</web-resource-name>
-            <url-pattern>/index.jsp</url-pattern>
-            <url-pattern>/admin.jsp</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>admin</role-name>
-        </auth-constraint>
-    </security-constraint>
+<!--    <security-constraint>-->
+<!--        <web-resource-collection>-->
+<!--            <web-resource-name>Auth</web-resource-name>-->
+<!--            <url-pattern>/index.jsp</url-pattern>-->
+<!--            <url-pattern>/admin.jsp</url-pattern>-->
+<!--        </web-resource-collection>-->
+<!--        <auth-constraint>-->
+<!--            <role-name>admin</role-name>-->
+<!--        </auth-constraint>-->
+<!--    </security-constraint>-->
 
 <!--    <security-constraint>-->
 <!--        <web-resource-collection>-->
@@ -43,12 +43,12 @@
 <!--        </auth-constraint>-->
 <!--    </security-constraint>-->
 
-    <security-role>
-        <role-name>admin</role-name>
-    </security-role>
+<!--    <security-role>-->
+<!--        <role-name>admin</role-name>-->
+<!--    </security-role>-->
 
-    <security-role>
-        <role-name>all</role-name>
-    </security-role>
+<!--    <security-role>-->
+<!--        <role-name>all</role-name>-->
+<!--    </security-role>-->
 
-</web-app>
+<!--</web-app>-->

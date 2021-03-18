@@ -36,3 +36,7 @@ N
 src/main/java/entity/Game.java,1/5/158fc47d6fbd5e4e48094dd08d44c29667fd94ec
 Z
 *src/test/java/persistance/GameDaoTest.java,4/e/4eae444fa59005298bed3bdbe3cb73a3496940cf
+T
+$src/main/webapp/META-INF/context.xml,c/b/cbfb0d2e9b2b9fbf9d54374577c894a38643c6d0
+I
+src/main/webapp/admin.jsp,1/6/16c841072742f24edfb63d62f4da7ea207d6a9cd
