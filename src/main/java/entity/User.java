@@ -15,7 +15,7 @@ public class User {
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
 
-    @Column(name = "username")
+    @Column(name = "user_name")
     private String userName;
 
     @Column(name = "password")

@@ -1,7 +1,9 @@
 DROP TABLE IF EXISTS `run`;
 DROP TABLE IF EXISTS `technique`;
 DROP TABLE IF EXISTS `game`;
+DROP TABLE IF EXISTS `role`;
 DROP TABLE IF EXISTS `user`;
+
 -- tables
 -- Table: Game
 CREATE TABLE `game` (
@@ -41,7 +43,7 @@ CREATE TABLE `technique` (
 CREATE TABLE `user` (
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `user_email` varchar(40) NOT NULL,
-                        `username` varchar(30) NOT NULL,
+                        `user_name` varchar(30) NOT NULL,
                         `password` varchar(40) NOT NULL,
                         PRIMARY KEY (`id`)
 );
@@ -81,8 +83,3 @@ ALTER TABLE `technique` ADD CONSTRAINT `technique_game` FOREIGN KEY `technique_g
 -- Reference: Technique_User (table: Technique)
 ALTER TABLE `technique` ADD CONSTRAINT `technique_user` FOREIGN KEY `technique_user` (`user_id`)
     REFERENCES `user` (`id`);
-
-/*!40103 SET GLOBAL TIME_ZONE = 'system' */;
-/*!40103 SET TIME_ZONE='-05:00' */;
-
-SELECT @@GLOBAL.time_zone, @@SESSION.time_zone;

@@ -1,10 +1,16 @@
 package controller;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import entity.Run;
+import persistance.GenericDao;
 
+import java.io.*;
+import java.util.List;
+import javax.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 /**
  * @author Lucas Eddy
  *
@@ -15,6 +21,7 @@ import javax.servlet.annotation.*;
 )
 public class Search extends HttpServlet {
 
+//    private GenericDao dao;
     /**
      *  Handles HTTP GET requests.
      *
@@ -23,18 +30,16 @@ public class Search extends HttpServlet {
      *@exception  ServletException  if there is a Servlet failure
      *@exception  IOException       if there is an IO failure
      */
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-//        BeanOne myBean = new BeanOne();
+//        dao = new GenericDao(Run.class);
+//        List<Run> runs = dao.getAll();
+//        request.setAttribute("recentRuns", runs);
 //
-//        myBean.setData("I'm special!");
+//        String url = "/index.jsp";
 //
-//        request.setAttribute("myCoolBean", myBean);
-//
-//        String url = "/beanOneDemo.jsp";
-//
-//        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+//        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 //        dispatcher.forward(request, response);
     }
 }
