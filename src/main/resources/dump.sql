@@ -70,16 +70,16 @@ CREATE TABLE role
 -- foreign keys
 -- Reference: Run_Game (table: Run)
 ALTER TABLE `run` ADD CONSTRAINT `run_game` FOREIGN KEY `run_game` (`game_id`)
-    REFERENCES `game` (`id`);
+    REFERENCES `game` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- Reference: Run_User (table: Run)
 ALTER TABLE `run` ADD CONSTRAINT `run_user` FOREIGN KEY `run_user` (`user_id`)
-    REFERENCES `user` (`id`);
+    REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- Reference: Technique_Game (table: Technique)
 ALTER TABLE `technique` ADD CONSTRAINT `technique_game` FOREIGN KEY `technique_game` (`game_id`)
-    REFERENCES `game` (`id`);
+    REFERENCES `game` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- Reference: Technique_User (table: Technique)
 ALTER TABLE `technique` ADD CONSTRAINT `technique_user` FOREIGN KEY `technique_user` (`user_id`)
-    REFERENCES `user` (`id`);
+    REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

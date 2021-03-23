@@ -1,7 +1,8 @@
 package persistance;
 
-import entity.Game;
+
 import entity.Run;
+import entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import testUtils.Database;
@@ -10,9 +11,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
-public class GameDaoTest {
-
+public class UserDaoTest {
     GenericDao dao;
 
     /**
@@ -20,7 +19,7 @@ public class GameDaoTest {
      */
     @BeforeEach
     void setUp() {
-        dao = new GenericDao(Game.class);
+        dao = new GenericDao(User.class);
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
@@ -31,9 +30,8 @@ public class GameDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        Game retrievedGame = (Game)dao.getById(1);
-        assertEquals("Haunting Ground", retrievedGame.getTitle());
-
+        User retrievedUser = (User)dao.getById(1);
+        assertEquals("sonic", retrievedUser.getUserName());
     }
 
     /**
@@ -41,13 +39,13 @@ public class GameDaoTest {
      */
     @Test
     void insertSuccess() {
-        Game newGame = new Game( "Resident Evil 2(1998)", "Developed By Capcom", "imgpath");
-        int id = dao.insert(newGame);
+        User newUser = new User( "myNewEmail@email.com", "newUser34", "12345");
+        int id = dao.insert(newUser);
         assertNotEquals(0,id);
-        Game insertedGame = (Game)dao.getById(id);
-        assertEquals("Resident Evil 2(1998)", insertedGame.getTitle());
-        assertEquals("Developed By Capcom", insertedGame.getDescription());
-        assertEquals("imgpath", insertedGame.getImagePth());
+        User insertedUser = (User)dao.getById(id);
+        assertEquals("myNewEmail@email.com", insertedUser.getUserEmail());
+        assertEquals("newUser34", insertedUser.getUserName());
+        assertEquals("12345", insertedUser.getPassword());
     }
 
     /**
@@ -55,11 +53,11 @@ public class GameDaoTest {
      */
     @Test
     void updateSuccess() {
-        Game gameToUpdate = (Game)dao.getById(2);
-        gameToUpdate.setDescription("Not Developed By Capcom");
-        dao.saveOrUpdate(gameToUpdate);
-        Game gameAfterUpdate = (Game)dao.getById(2);
-        assertEquals(gameToUpdate, gameAfterUpdate);
+        User userToUpdate = (User)dao.getById(2);
+        userToUpdate.setUserName("bigman6000");
+        dao.saveOrUpdate(userToUpdate);
+        User userAfterUpdate = (User)dao.getById(2);
+        assertEquals(userToUpdate, userAfterUpdate);
     }
 
     /**
@@ -79,14 +77,14 @@ public class GameDaoTest {
         GenericDao runDao = new GenericDao(Run.class);
         dao.delete(dao.getById(5));
         assertNull(dao.getById(5));
-        assertNull(runDao.getById(1));
+        assertNull(runDao.getById(8));
     }
     /**
      * Verify successful retrieval of all games
      */
     @Test
     void getAllSuccess() {
-        List<Game> games = dao.getAll();
-        assertEquals(5, games.size());
+        List<User> users = dao.getAll();
+        assertEquals(5, users.size());
     }
 }

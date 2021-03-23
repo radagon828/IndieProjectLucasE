@@ -1,8 +1,10 @@
 package entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * The type Run.
@@ -10,6 +12,7 @@ import javax.persistence.*;
 @Entity(name = "Run")
 @Table(name = "run")
 public class Run {
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
@@ -30,10 +33,12 @@ public class Run {
     @Column(name = "video_link")
     private String videoLink;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="game_id")
     private Game game;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
@@ -46,15 +51,13 @@ public class Run {
      * @param platform  the platform
      * @param date      the date
      * @param videoLink the video link
-     * @param game      the game
      */
-    public Run(String category, String time, String platform, String date, String videoLink, Game game) {
+    public Run(String category, String time, String platform, String date, String videoLink) {
         this.category = category;
         this.time = time;
         this.platform = platform;
         this.date = date;
         this.videoLink = videoLink;
-        this.game = game;
     }
 
     /**
@@ -208,4 +211,28 @@ public class Run {
         this.user = user;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Run run = (Run) o;
+        return id == run.id && Objects.equals(category, run.category) && Objects.equals(time, run.time) && Objects.equals(platform, run.platform) && Objects.equals(date, run.date) && Objects.equals(videoLink, run.videoLink);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, category, time, platform, date, videoLink);
+    }
+
+    @Override
+    public String toString() {
+        return "Run{" +
+                "id=" + id +
+                ", category='" + category + '\'' +
+                ", time='" + time + '\'' +
+                ", platform='" + platform + '\'' +
+                ", date='" + date + '\'' +
+                ", videoLink='" + videoLink + '\'' +
+                '}';
+    }
 }

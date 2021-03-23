@@ -1,8 +1,11 @@
 package entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Getter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -26,9 +29,11 @@ public class Game {
     @Column(name = "image_pth")
     private String imagePth;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "game", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Run> runs;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "game", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Technique> techniques;
 
@@ -190,5 +195,28 @@ public class Game {
 
     public void setId(int game_id) {
         this.id = game_id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Game game = (Game) o;
+        return id == game.id && Objects.equals(title, game.title) && Objects.equals(description, game.description) && Objects.equals(imagePth, game.imagePth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, description, imagePth);
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", imagePth='" + imagePth + '\'' +
+                '}';
     }
 }
