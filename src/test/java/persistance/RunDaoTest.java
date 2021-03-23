@@ -68,7 +68,7 @@ public class RunDaoTest {
         runToUpdate.setPlatform("PS4");
         dao.saveOrUpdate(runToUpdate);
         Run runAfterUpdate = (Run)dao.getById(2);
-        assertEquals("PS4", runAfterUpdate.getPlatform());
+        assertEquals(runToUpdate, runAfterUpdate);
     }
 
     /**

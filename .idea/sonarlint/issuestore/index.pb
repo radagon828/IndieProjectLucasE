@@ -40,3 +40,9 @@ T
 $src/main/webapp/META-INF/context.xml,c/b/cbfb0d2e9b2b9fbf9d54374577c894a38643c6d0
 I
 src/main/webapp/admin.jsp,1/6/16c841072742f24edfb63d62f4da7ea207d6a9cd
+Y
+)src/test/java/persistance/RunDaoTest.java,3/6/36de40404208ff7c3e513e0c201ef7a702da472e
+_
+/src/test/java/persistance/TechniqueDaoTest.java,1/d/1d46bd35570b0e26ea95a5c2843f6956e21366b7
+N
+src/main/webapp/techVideos.jsp,c/9/c9f14d63e078c2414751f06132d4629963bd7614

@@ -1,12 +1,20 @@
 <%@ page import="persistance.GenericDao" %>
 <%@ page import="entity.Run" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 
         GenericDao dao = new GenericDao(Run.class);
         List<Run> runs = dao.getAll();
+//        List<String> displayRuns = new ArrayList<>();
+//
+//        for (Run element : runs) {
+//
+//        }
+
+
         request.setAttribute("runs", runs);
 %>
 
@@ -32,7 +40,7 @@
             <h2>Latest Runs</h2>
             <table>
                 <c:forEach var="recentRuns" items="${runs}">
-                    <tr><td>Run: ${recentRuns.id}</td></tr>
+                    <tr><td>${recentRuns.toString()}</td></tr>
                 </c:forEach>
             </table>
         </section>
