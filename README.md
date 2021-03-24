@@ -71,5 +71,19 @@ to display the most recently added records
 3/11 Create profile page that displays all user submitted runs and technique videos
 for the profile thats logged in
 
+##Week 8 Onward
+
+3/25 Figure out how to get auth to work by clicking on the Login link to start a session
+
+4/1 Create functional search engine for games, and create at least one game page that displays top records
+
+4/8 Create functional submission page for technique videos and records
+
+4/15 Create functional sign in page that adds a user and a user role
+
+4/22 Create admin page that approves runs and videos
+
+4/29 add ability for the pages to change appearence depending on what role is signed into an app
+
 
 
