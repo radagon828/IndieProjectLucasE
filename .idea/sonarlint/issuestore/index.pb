@@ -50,3 +50,5 @@ Z
 *src/test/java/persistance/UserDaoTest.java,6/7/67a68a838531c4993fbc8098fb87635966bcf7f9
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+Y
+)src/main/java/persistance/GenericDao.java,9/0/90d942ec398fc749d4808c50a43c3658c4da6ebe

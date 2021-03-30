@@ -36,4 +36,8 @@ Tasks Completed:
 -began work on adding my indie project to AWS
 -Began adding auth files to my project
 
+### Week 9
+
+Tasks Completed:
+-Completed week 9 exercise using week 7 files
 

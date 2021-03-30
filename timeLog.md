@@ -11,3 +11,5 @@
 |03/16/2021|Added authorization files and role table|3|
 |03/18/2021|Fixed time zone errors buy altering the mysqld.cnf file to have a default time zone|3|
 |03/20/2021|Added more jsps, got form auth to work, displayed table data on the index page by setting and attribute and looping through the data|4|
+|03/28/2021|Completed week 9 exercise|3|
+|03/30/2021|added loginAction servlet for login button Authorization|1|
