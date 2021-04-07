@@ -41,3 +41,12 @@ Tasks Completed:
 Tasks Completed:
 -Completed week 9 exercise using week 7 files
 
+### Week 10
+
+Tasks Completed:
+-started Team project, completed test for getting all classes from dnd api
+
+### Week 11
+
+Task Completed:
+-Create dnd api test to grab all race, class, monster, and spell data
