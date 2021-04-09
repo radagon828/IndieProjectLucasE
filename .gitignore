@@ -50,3 +50,14 @@ fabric.properties
 
 src/main/resources
 src/test/resources
+src/test/resources/database.properties
+src/test/resources/hibernate.cfg.xml
+src/test/resources/log4j2.properties
+src/test/resources/dump.sql
+
+src/main/resources/database.properties
+src/main/resources/hibernate.cfg.xml
+src/main/resources/log4j2.properties
+src/main/resources/dump.sql
+
+src/main/webapp/META-INF
