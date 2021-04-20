@@ -8,12 +8,6 @@
 
         GenericDao dao = new GenericDao(Run.class);
         List<Run> runs = dao.getAll();
-//        List<String> displayRuns = new ArrayList<>();
-//
-//        for (Run element : runs) {
-//
-//        }
-
 
         request.setAttribute("runs", runs);
 %>

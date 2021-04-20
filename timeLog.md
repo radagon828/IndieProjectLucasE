@@ -15,3 +15,4 @@
 |03/30/2021|added loginAction servlet for login button Authorization|1|
 |04/05/2021|completed activities for week 11|1|
 |04/07/2021|changed form auth back to work with local servers, will find out how to make it work with AWS later|.5|
+|04/20/2021|added navbar that changes based on who is logged in|1|

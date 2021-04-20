@@ -25,28 +25,40 @@ I have learned a lot of things, such as the fact that the clean db file needs to
 ### Week 7
 
 Tasks Completed:
--Completed Auth Exercise
+- Completed Auth Exercise
 
 I thought i would have to use a method similar to php in order to create admins in my program
 
 ### Week 8
 
 Tasks Completed:
--Completed week 8 activities and exeecise
--began work on adding my indie project to AWS
--Began adding auth files to my project
+- Completed week 8 activities and exeecise
+- began work on adding my indie project to AWS
+- Began adding auth files to my project
 
 ### Week 9
 
 Tasks Completed:
--Completed week 9 exercise using week 7 files
+- Completed week 9 exercise using week 7 files
 
 ### Week 10
 
 Tasks Completed:
--started Team project, completed test for getting all classes from dnd api
+- started Team project, completed test for getting all classes from dnd api
 
 ### Week 11
 
 Task Completed:
--Create dnd api test to grab all race, class, monster, and spell data
+- Create dnd api test to grab all race, class, monster, and spell data
+
+### Week 12
+
+Tasks Completed:
+- Presented team project
+- added servlet initializer to team project to prevent long loading times
+- added equipment data to application
+
+### Week 13
+
+Tasks Completed:
+- Added bootstrap navbar to indie project that changes based on whos logged in
