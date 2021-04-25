@@ -2,10 +2,15 @@ package persistance;
 import entity.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -36,6 +41,8 @@ public class GenericDao<T> {
         session.close();
         return entity;
     }
+
+
 
     /**
      * update entity
@@ -91,6 +98,21 @@ public class GenericDao<T> {
         return list;
     }
 
+    public List<T> getByString(String propertyName, String searchWord) {
+        Session session = getSession();
+
+        logger.debug("Search for a game based on: " + searchWord);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+
+        query.select(root).where(builder.like(root.get(propertyName), "%" + searchWord + "%"));
+        List<T> list = session.createQuery(query).getResultList();
+
+        session.close();
+        return list;
+    }
     /**
      * Returns an open session from session factory
      * @return session

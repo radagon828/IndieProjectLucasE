@@ -12,8 +12,8 @@
             <li class="nav-item"><a class="nav-link text-light" href="gameList.jsp">Games List</a></li>
             <li class="nav-item"><a class="nav-link text-light" href="techVideos.jsp">Tech Videos</a></li>
         </ul>
-            <form class="form-inline my-2 my-lg-0" action="" method="get">
-                <input class="form-control mr-sm-2" type="text" name="search" id="search">
+            <form class="form-inline my-2 my-lg-0" name="searchData" action="searchGame" method="get">
+                <input class="form-control mr-sm-2" type="text" name="searchValue" id="searchValue">
                 <button class="btn btn-outline-dark bg-light my-2 my-sm-0 mx-1 text-dark" type="submit">Search</button>
             </form>
         <c:choose>

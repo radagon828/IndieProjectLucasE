@@ -1,45 +1,43 @@
 package controller;
 
-import entity.Run;
+import entity.Game;
 import persistance.GenericDao;
 
-import java.io.*;
-import java.util.List;
-import javax.servlet.annotation.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-/**
- * @author Lucas Eddy
- *
- */
+import javax.servlet.annotation.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 @WebServlet(
-        name = "search",
-        urlPatterns = { "/search" }
+        urlPatterns = {"/searchGame"}
 )
+
 public class Search extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-//    private GenericDao dao;
-    /**
-     *  Handles HTTP GET requests.
-     *
-     *@param  request                   the HttpServletRequest object
-     *@param  response                   the HttpServletResponse object
-     *@exception  ServletException  if there is a Servlet failure
-     *@exception  IOException       if there is an IO failure
-     */
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        GenericDao gameDao;
+        gameDao = new GenericDao(Game.class);
 
-//        dao = new GenericDao(Run.class);
-//        List<Run> runs = dao.getAll();
-//        request.setAttribute("recentRuns", runs);
-//
-//        String url = "/index.jsp";
-//
-//        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-//        dispatcher.forward(request, response);
+        List<Game> games;
+        Game game = new Game("Results not found", "Results not found", "Results not found");
+
+        if (req.getParameter("searchValue") == null || req.getParameter("searchValue") == "") {
+            games = new ArrayList<>();
+            games.add(game);
+        } else {
+            String searchWord = req.getParameter("searchValue");
+            games = gameDao.getByString("title", searchWord);
+        }
+        req.setAttribute("games", games);
+
+        req.setAttribute("newValue", "hello this is a test");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
+        dispatcher.forward(req, resp);
     }
 }

@@ -89,4 +89,11 @@ public class GameDaoTest {
         List<Game> games = dao.getAll();
         assertEquals(5, games.size());
     }
+
+    @Test
+    void getByStringSuccess() {
+        String value = "haunt";
+        List<Game> games = dao.getByString("title",value);
+        System.out.println(games);
+    }
 }
