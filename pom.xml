@@ -36,18 +36,18 @@
           <version>${hibernate-version}</version>
         </dependency>
 <!--     https://mvnrepository.com/artifact/org.hibernate/hibernate-core-->
-<!--    <dependency>-->
-<!--      <groupId>org.hibernate</groupId>-->
-<!--      <artifactId>hibernate-core</artifactId>-->
-<!--      <version>5.4.4.Final</version>-->
-<!--    </dependency>-->
-<!--    &lt;!&ndash; c3p0 - used to handle connection pooling with hibernate &ndash;&gt;-->
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 &ndash;&gt;-->
-<!--    <dependency>-->
-<!--      <groupId>org.hibernate</groupId>-->
-<!--      <artifactId>hibernate-c3p0</artifactId>-->
-<!--      <version>5.4.4.Final</version>-->
-<!--    </dependency>-->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.4.4.Final</version>
+    </dependency>
+    <!-- c3p0 - used to handle connection pooling with hibernate -->
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-c3p0</artifactId>
+      <version>5.4.4.Final</version>
+    </dependency>
     <!-- next 2 dependencies are for log4j -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
