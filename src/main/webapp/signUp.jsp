@@ -7,7 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
 <%@ include file="head.jsp"%>
+    <script src="main/js/jquery.validate.js" ></script>
+    <script src="main/js/signup-form.js"></script>
+</head>
 <body>
 <%@ include file="navbar.jsp"%>
 

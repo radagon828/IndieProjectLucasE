@@ -1,7 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
+<head>
 <%@include file="head.jsp"%>
+</head>
 <body>
 <%@include file="navbar.jsp"%>
 

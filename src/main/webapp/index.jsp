@@ -14,9 +14,9 @@
 %>
 
 <html lang="en">
-
+<head>
 <%@include file="head.jsp"%>
-
+</head>
 <body>
     <%@ include file="navbar.jsp"%>
 

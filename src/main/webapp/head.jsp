@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<head>
+
         <title>${myTitle}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="js/jquery.validate.js" ></script>
-        <script src="js/signup-form.js"></script>
-</head>
+
+
 
