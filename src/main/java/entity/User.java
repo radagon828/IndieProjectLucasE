@@ -37,7 +37,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Technique> techniques;
 
-
+    @JsonManagedReference
+    @OneToOne(mappedBy = "user")
+    private Role role;
 
     /**
      * instantiates a user class
@@ -192,5 +194,24 @@ public class User {
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+
+    /**
+     * Gets role.
+     *
+     * @return the role
+     */
+    public Role getRole() {
+        return role;
+    }
+
+    /**
+     * Sets role.
+     *
+     * @param role the role
+     */
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

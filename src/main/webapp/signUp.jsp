@@ -9,8 +9,8 @@
 <html>
 <head>
 <%@ include file="head.jsp"%>
-    <script src="main/js/jquery.validate.js" ></script>
-    <script src="main/js/signup-form.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/sign-up.js"></script>
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
