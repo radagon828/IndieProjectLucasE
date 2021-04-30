@@ -173,6 +173,26 @@ public class User {
         technique.setUser(null);
     }
 
+    /**
+     * Add role.
+     *
+     * @param role the role
+     */
+    public void addRole(Role role) {
+        this.role = role;
+        role.setUser(this);
+    }
+
+    /**
+     * Remove role.
+     *
+     * @param role the role
+     */
+    public void removeRole(Role role) {
+        this.role = null;
+        role.setUser(null);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

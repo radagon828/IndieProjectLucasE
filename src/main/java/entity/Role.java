@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * The type Role.
@@ -23,8 +24,9 @@ public class Role {
     @Column(name = "user_name")
     private String user_name;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @MapsId
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
     /**
@@ -38,12 +40,10 @@ public class Role {
      *
      * @param roleName  the role name
      * @param user_name the user name
-     * @param user      the user
      */
-    public Role(String roleName, String user_name, User user) {
+    public Role(String roleName, String user_name) {
         this.roleName = roleName;
         this.user_name = user_name;
-        this.user = user;
     }
 
     /**
@@ -116,5 +116,29 @@ public class Role {
      */
     public void setUser(User user) {
         this.user = user;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Role role = (Role) o;
+        return id == role.id && roleName.equals(role.roleName) && user_name.equals(role.user_name) && user.equals(role.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, roleName, user_name, user);
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", roleName='" + roleName + '\'' +
+                ", user_name='" + user_name + '\'' +
+                ", user=" + user +
+                '}';
     }
 }
