@@ -20,7 +20,7 @@
     <p>* denotes a required field</p>
     <p>
         <label for="username">UserName* (min 4 characters))</label>
-        <input id="username" name="name" minlength="4" type="text" required>
+        <input id="username" name="username" minlength="4" type="text" required>
     </p>
     <p>
         <label for="email">E-Mail*</label>

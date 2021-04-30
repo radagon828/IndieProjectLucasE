@@ -1,7 +1,10 @@
 package controller;
 
+import entity.Role;
+import entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import persistance.GenericDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,6 +27,22 @@ public class SignUp extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        GenericDao userDao = new GenericDao(User.class);
+
+        User user = new User();
+        user.setUserName(req.getParameter("username"));
+        user.setUserEmail(req.getParameter("email"));
+        user.setPassword(req.getParameter("password"));
+
+        Role role = new Role("user", user.getUserName());
+
+        user.addRole(role);
+
+        logger.debug("Added user:", user);
+
+        req.setAttribute("newUserId", user.getId());
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/signUpSuccess.jsp");
         dispatcher.forward(req, resp);
     }
