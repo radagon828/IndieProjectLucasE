@@ -39,6 +39,8 @@ public class SignUp extends HttpServlet {
 
         user.addRole(role);
 
+        userDao.insert(user);
+
         logger.debug("Added user:", user);
 
         req.setAttribute("newUserId", user.getId());

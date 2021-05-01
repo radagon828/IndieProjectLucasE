@@ -1,13 +1,13 @@
 package persistance;
 
 
+import entity.Role;
 import entity.Run;
 import entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import testUtils.Database;
 
-import javax.management.relation.Role;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -41,12 +41,17 @@ public class UserDaoTest {
     @Test
     void insertSuccess() {
         User newUser = new User( "myNewEmail@email.com", "newUser34", "12345");
+        Role role = new Role("user", newUser.getUserName());
+        newUser.addRole(role);
+
         int id = dao.insert(newUser);
         assertNotEquals(0,id);
+
         User insertedUser = (User)dao.getById(id);
         assertEquals("myNewEmail@email.com", insertedUser.getUserEmail());
         assertEquals("newUser34", insertedUser.getUserName());
         assertEquals("12345", insertedUser.getPassword());
+
     }
 
     /**

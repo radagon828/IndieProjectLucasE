@@ -1,15 +1,11 @@
 package persistance;
 
-import entity.Game;
 import entity.Role;
-import entity.Technique;
 import entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import testUtils.Database;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -35,7 +31,7 @@ public class RoleDaoTest {
     @Test
     void getByIdSuccess() {
         Role retrievedRole = (Role)dao.getById(2);
-        assertEquals("carci", retrievedRole.getUser_name());
+        assertEquals("sonic", retrievedRole.getUser_name());
 
     }
 

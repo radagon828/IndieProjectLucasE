@@ -38,7 +38,7 @@ public class User {
     private Set<Technique> techniques;
 
     @JsonManagedReference
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Role role;
 
     /**

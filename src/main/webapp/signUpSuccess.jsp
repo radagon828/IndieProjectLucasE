@@ -10,7 +10,7 @@
 <%@include file="head.jsp"%>
 <body>
 <%@include file="navbar.jsp"%>
-<p>You have successfully created your account would you like to visit your profile page?</p>
+<p>You have successfully created your account would you like to <a href="loginAction">login?</a></p>
 
 </body>
 </html>
