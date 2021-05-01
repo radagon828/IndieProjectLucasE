@@ -53,7 +53,7 @@ public class TechniqueDaoTest {
         Game game = (Game)gameDao.getById(1);
         User user = (User)UserDao.getById(1);
 
-        Technique newTech = new Technique("Resident Evil Remake Commentary", "This video is a commentated run of REmake", "https://www.youtube.com/watch?v=N-TrW-LN7Xw", "" + formatter.format(date) + "");
+        Technique newTech = new Technique("Resident Evil Remake Commentary", "this video is a commentated run of REmake", "walkthrough", "https://www.youtube.com/watch?v=N-TrW-LN7Xw", "" + formatter.format(date) + "");
         game.addTechnique(newTech);
         user.addTechnique(newTech);
         int id = dao.insert(newTech);

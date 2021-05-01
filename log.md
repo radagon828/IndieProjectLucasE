@@ -62,3 +62,10 @@ Tasks Completed:
 
 Tasks Completed:
 - Added bootstrap navbar to indie project that changes based on whos logged in
+
+### Week 14
+Tasks Completed:
+- Added sign up functionality
+- added type datatype to technique table
+- Added functional search bar to app
+- Participated in one on one code review

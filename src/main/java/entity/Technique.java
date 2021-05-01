@@ -20,6 +20,9 @@ public class Technique {
     @Column(name = "title")
     private String title;
 
+    @Column(name= "type")
+    private String type;
+
     @Column(name = "description")
     private String description;
 
@@ -47,9 +50,10 @@ public class Technique {
      * @param videoLink      the video link
      * @param submissionDate the submission date
      */
-    public Technique(String title, String description, String videoLink, String submissionDate) {
+    public Technique(String title, String description, String type, String videoLink, String submissionDate) {
         this.title = title;
         this.description = description;
+        this.type = type;
         this.videoLink = videoLink;
         this.submissionDate = submissionDate;
     }

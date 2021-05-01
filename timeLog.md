@@ -17,3 +17,5 @@
 |04/07/2021|changed form auth back to work with local servers, will find out how to make it work with AWS later|.5|
 |04/20/2021|added navbar that changes based on who is logged in|1|
 |04/24/2021|Added functional search function|3|
+|04/29/2021|Started adding the ability for a user to make his own account and log in|3|
+|04/30/2021|completed sign up functionality, added type datatype to technique table, added run category entity|2|
