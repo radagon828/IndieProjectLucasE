@@ -28,29 +28,46 @@
 <body>
     <%@ include file="navbar.jsp"%>
 
-    <div class="mt-3">
+    <main class="mt-3">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 mt-2">
-
-                <h2>Latest Techniques</h2>
-                <table>
-                    <c:forEach var="recentTech" items="${techniques}">
-                        <tr><td>${recentTech.toString()}</td></tr>
-                    </c:forEach>
-                </table>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Latest Techniques</div>
+                        <div class="panel-body">
+                            <table>
+                                <c:forEach var="recentTech" items="${techniques}">
+                                    <tr class="clickable-row" data-href="/Videos/tech/${recentTech.id}">
+                                        <td>${recentTech.game.imagePth}</td>
+                                        <td>${recentTech.game.title}</td>
+                                        <td>${recentTech.title}</td>
+                                        <td><a href="profiles/${recentTech.user.id}">${recentTech.user.userName}</a></td>
+                                        <td>${recentTech.description}</td>
+                                        <td>${recentTech.submissionDate}</td>
+                                    </tr>
+                                </c:forEach>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-sm-6 mt-2">
-                <h2>Latest Runs</h2>
-                <table>
-                    <c:forEach var="recentRun" items="${runs}">
-                        <tr><td>${recentRun.toString()}</td></tr>
-                    </c:forEach>
-                </table>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Latest Runs</div>
+                        <div class="panel-body">
+                            <table>
+                                <c:forEach var="recentRun" items="${runs}">
+                                    <tr><td>${recentRun.toString()}</td></tr>
+                                </c:forEach>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
 </body>
 </html>
+<script>
+
+</script>
