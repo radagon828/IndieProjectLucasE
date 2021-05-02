@@ -37,8 +37,8 @@
                         <div class="panel-body">
                             <table>
                                 <c:forEach var="recentTech" items="${techniques}">
-                                    <tr class="clickable-row" data-href="/Videos/tech/${recentTech.id}">
-                                        <td>${recentTech.game.imagePth}</td>
+                                    <tr class="clickable-row small" data-href="/Videos/tech/${recentTech.id}">
+                                        <td><img src="${recentTech.game.imagePth}" alt="gameImage.png" /></td>
                                         <td>${recentTech.game.title}</td>
                                         <td>${recentTech.title}</td>
                                         <td><a href="profiles/${recentTech.user.id}">${recentTech.user.userName}</a></td>
@@ -56,7 +56,14 @@
                         <div class="panel-body">
                             <table>
                                 <c:forEach var="recentRun" items="${runs}">
-                                    <tr><td>${recentRun.toString()}</td></tr>
+                                    <tr class="clickable-row small" data-href="/Videos/run/${recentTech.id}">
+                                        <td><img src="${recentRun.game.imagePth}" alt="gameImage.png" /></td>
+                                        <td>${recentRun.game.title}</td>
+                                        <td>${recentRun.category}</td>
+                                        <td><a href="profiles/${recentRun.user.id}">${recentRun.user.userName}</a></td>
+                                        <td>${recentRun.time}</td>
+                                        <td>${recentRun.date}</td>
+                                    </tr>
                                 </c:forEach>
                             </table>
                         </div>
