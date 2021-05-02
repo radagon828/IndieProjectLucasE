@@ -37,7 +37,7 @@
                         <div class="panel-body">
                             <table>
                                 <c:forEach var="recentTech" items="${techniques}">
-                                    <tr class="clickable-row small" data-href="/Videos/tech/${recentTech.id}">
+                                    <tr class="clickable-row small" data-href="videos/tech/${recentTech.id}">
                                         <td><img src="${recentTech.game.imagePth}" alt="gameImage.png" /></td>
                                         <td>${recentTech.game.title}</td>
                                         <td>${recentTech.title}</td>
@@ -56,7 +56,7 @@
                         <div class="panel-body">
                             <table>
                                 <c:forEach var="recentRun" items="${runs}">
-                                    <tr class="clickable-row small" data-href="/Videos/run/${recentTech.id}">
+                                    <tr class="clickable-row small" data-href="videos/run/${recentTech.id}">
                                         <td><img src="${recentRun.game.imagePth}" alt="gameImage.png" /></td>
                                         <td>${recentRun.game.title}</td>
                                         <td>${recentRun.category}</td>

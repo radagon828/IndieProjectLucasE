@@ -8,8 +8,10 @@
 <div class="container">
     <div class="row">
 <%--        <c:if test="${videoDisplay.title}">--%>
-        <div class="col-sm-8" mx-auto mt-2>
-            <iframe src="${videoDisplay.videoLink}" title="Video">
+        <div class="mx-auto mt-2">
+            <iframe src="${videoDisplay.videoLink}"
+                    width="80%"
+                    allowfullscreen="<allowfullscreen>">>
             </iframe>
         </div>
 <%--        </c:if>--%>
