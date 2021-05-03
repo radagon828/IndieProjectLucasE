@@ -6,29 +6,32 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Context;
+
+import entity.Game;
 import persistance.GenericDao;
 
 import java.util.List;
 
 
 @Path("/games")
-public class Game {
+public class FindGame {
+
 
     @GET
     public void getGames(@Context HttpServletRequest request,
-                        @Context HttpServletResponse response) throws Exception
+                             @Context HttpServletResponse response) throws Exception
     {
         GenericDao dao = new GenericDao(Game.class);
 
         List<Game> games = dao.getAll();
 
         request.setAttribute("games", games);
-        request.getRequestDispatcher("/gamesList.jsp")
+        request.getRequestDispatcher("/gameList.jsp")
                 .forward(request, response);
     }
 
     @GET
-    @Path("{game_id}")
+    @Path("/games/{game_id}")
     public void getGame(@Context HttpServletRequest request,
                         @Context HttpServletResponse response, @PathParam("game_id") int gameId) throws Exception
     {

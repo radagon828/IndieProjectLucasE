@@ -3,6 +3,8 @@
 <%@include file="head.jsp"%>
 <body>
 <%@ include file="navbar.jsp"%>
+<c:forEach var="game" items="${games}">
 
+</c:forEach>
 </body>
 </html>
