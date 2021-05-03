@@ -56,7 +56,7 @@
                         <div class="panel-body">
                             <table>
                                 <c:forEach var="recentRun" items="${runs}">
-                                    <tr class="clickable-row small" data-href="videos/run/${recentTech.id}">
+                                    <tr class="clickable-row small" data-href="videos/run/${recentRun.id}">
                                         <td><img src="${recentRun.game.imagePth}" alt="gameImage.png" /></td>
                                         <td>${recentRun.game.title}</td>
                                         <td>${recentRun.category}</td>

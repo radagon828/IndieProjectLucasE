@@ -113,7 +113,7 @@
   </dependencies>
 
   <build>
-    <finalName>IndieProject</finalName>
+    <finalName>IndieProject2</finalName>
     <pluginManagement>
       <plugins>
         <plugin>

@@ -5,7 +5,7 @@ import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
 
-@ApplicationPath("/scaryruns") //You may want to add a value here so that all traffic isn't routed to the class below.
+@ApplicationPath("/") //You may want to add a value here so that all traffic isn't routed to the class below.
 
 public class ScaryRunsApp extends Application {
 
@@ -15,6 +15,7 @@ public class ScaryRunsApp extends Application {
         h.add(Game.class);
         h.add(Video.class);
         h.add(Profile.class);
+
         return h;
     }
 }
