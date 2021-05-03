@@ -31,7 +31,7 @@ public class FindGame {
     }
 
     @GET
-    @Path("/games/{game_id}")
+    @Path("{game_id}")
     public void getGame(@Context HttpServletRequest request,
                         @Context HttpServletResponse response, @PathParam("game_id") int gameId) throws Exception
     {

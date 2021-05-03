@@ -6,4 +6,5 @@
 <body>
     <%@ include file="navbar.jsp"%>
 </body>
+<tr><td>${game.toString()}</td></tr>
 </html>

@@ -19,3 +19,5 @@
 |04/24/2021|Added functional search function|3|
 |04/29/2021|Started adding the ability for a user to make his own account and log in|3|
 |04/30/2021|completed sign up functionality, added type datatype to technique table, added run category entity|2|
+|05/01/2021|Added ability to view individual videos and profile pages|4|
+|05/02/2021|Added ability to view game pages and a massive game list, added base href to head for easy app navigation|4|

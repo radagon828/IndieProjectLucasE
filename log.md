@@ -69,3 +69,7 @@ Tasks Completed:
 - added type datatype to technique table
 - Added functional search bar to app
 - Participated in one on one code review
+
+### Week 15
+Tasks Completed:
+-added ability to view individual game pages, profile pages and video pages
