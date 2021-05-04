@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <html>
 <head>
@@ -37,7 +38,7 @@
                         <td><a href="games/${tech.game.id}">${tech.game.title}</a></td>
                         <td>${tech.title}</td>
                         <td>${tech.description}</td>
-                        <td>${tech.submissionDate}</td>
+                        <td>${fn:substring(ech.submissionDate, 0, 10)}</td>
                     </tr>
                 </c:forEach>
             </table>
