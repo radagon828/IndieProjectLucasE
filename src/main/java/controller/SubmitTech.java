@@ -22,9 +22,9 @@ import java.util.List;
  * @auther Lucas Eddy
  */
 @WebServlet(
-        urlPatterns = {"/submitRun"}
+        urlPatterns = {"/submitTech"}
 )
-public class SubmitRun extends HttpServlet {
+public class SubmitTech extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
@@ -32,10 +32,9 @@ public class SubmitRun extends HttpServlet {
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date(System.currentTimeMillis());
 
-        GenericDao runDao = new GenericDao(Run.class);
+        GenericDao techDao = new GenericDao(Run.class);
         GenericDao userDao = new GenericDao(User.class);
         GenericDao gameDao = new GenericDao(Game.class);
-        GenericDao CategoryDao = new GenericDao(RunCategory.class);
 
         List<User> userList = userDao.getByString("userName", req.getRemoteUser());
         User user = userList.get(0);
@@ -43,18 +42,12 @@ public class SubmitRun extends HttpServlet {
         int gameId = Integer.parseInt(req.getParameter("gameId"));
         Game game = (Game)gameDao.getById(gameId);
 
-        int categoryId = Integer.parseInt(req.getParameter("category"));
-        RunCategory category = (RunCategory)CategoryDao.getById(categoryId);
+        Technique newTech = new Technique("Resident Evil Remake Commentary", "this video is a commentated run of REmake", "walkthrough", "https://www.youtube.com/watch?v=N-TrW-LN7Xw", "" + formatter.format(date) + "");
+        game.addTechnique(newTech);
+        user.addTechnique(newTech);
+        techDao.insert(newTech);
 
-        Run newRun = new Run(req.getParameter("time"), req.getParameter("platform"), "" + formatter.format(date) + "",
-                req.getParameter("videoLink"));
-
-        game.addRun(newRun);
-        user.addRun(newRun);
-        category.addRun(newRun);
-        runDao.insert(newRun);
-
-        logger.debug("Adding new run:", newRun);
+        logger.debug("Adding new tech:", newTech);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/submissionSuccess.jsp");
         dispatcher.forward(req, resp);

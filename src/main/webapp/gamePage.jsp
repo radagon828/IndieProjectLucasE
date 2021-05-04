@@ -15,6 +15,7 @@
                     <div class="panel-body">
                         <img src="${game.imagePth}" alt="${game.imagePth}.png"/>
                         <p>${game.description}</p>
+                        <p><a class="nav-link" href="games/${game.id}/submitTech">Submit Technique Video</a></p>
                     </div>
                 </div>
             </section>
@@ -38,8 +39,8 @@
                                         View Rules
                                     </button>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" href="games/${game.id}/submitRun">Submit Run</a>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="games/${game.id}/submitRun">Submit Run</a>
                                 </li>
                             </ul>
                             <!-- Modal -->

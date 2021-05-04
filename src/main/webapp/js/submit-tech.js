@@ -1,5 +1,5 @@
 $().ready(function() {
-    $("#submitRunForm").validate({
+    $("#submitTechForm").validate({
         rules: {
             platform: {
                 required: true,

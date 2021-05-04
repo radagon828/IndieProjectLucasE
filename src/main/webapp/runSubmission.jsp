@@ -3,7 +3,7 @@
 <head>
     <%@include file="head.jsp"%>
     <script src="js/jquery.validate.js"></script>
-    <script src="js/submit-up.js"></script>
+    <script src="js/submit-run.js"></script>
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
@@ -18,7 +18,7 @@
                     <label for="category">Run Category*</label>
                     <select id="category" name="category" class="form-control">
                         <c:forEach var="category" items="${game.categories}">
-                            <option value="${category.categoryId}">${category.categoryName}</option>
+                            <option value="${category.id}">${category.categoryName}</option>
                         </c:forEach>
                     </select>
                 </div>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="time">Run Time(enter time in this format (HH:mm:ss))*</label>
-                    <input id="time" name="time" type="time" required>
+                    <input id="time" name="time" type="runTime" required>
                 </div>
                 <div class="form-group">
                     <label for="videoLink">Embedded Youtube Link*</label>

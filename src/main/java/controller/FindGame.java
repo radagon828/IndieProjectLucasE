@@ -66,5 +66,17 @@ public class FindGame {
                 .forward(request, response);
     }
 
+    @GET
+    @Path("{game_id}/submitTechnique")
+    public void getTechniqueSubmit(@Context HttpServletRequest request,
+                             @Context HttpServletResponse response, @PathParam("game_id") int gameId) throws Exception
+    {
+        GenericDao dao = new GenericDao(Game.class);
 
+        Game game = (Game) dao.getById(gameId);
+        request.setAttribute("game", game);
+
+        request.getRequestDispatcher("/techniqueSubmission.jsp")
+                .forward(request, response);
+    }
 }
