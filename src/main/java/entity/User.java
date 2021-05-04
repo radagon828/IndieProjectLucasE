@@ -234,4 +234,40 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
+
+    /**
+     * Gets runs.
+     *
+     * @return the runs
+     */
+    public Set<Run> getRuns() {
+        return runs;
+    }
+
+    /**
+     * Sets runs.
+     *
+     * @param runs the runs
+     */
+    public void setRuns(Set<Run> runs) {
+        this.runs = runs;
+    }
+
+    /**
+     * Gets techniques.
+     *
+     * @return the techniques
+     */
+    public Set<Technique> getTechniques() {
+        return techniques;
+    }
+
+    /**
+     * Sets techniques.
+     *
+     * @param techniques the techniques
+     */
+    public void setTechniques(Set<Technique> techniques) {
+        this.techniques = techniques;
+    }
 }

@@ -113,6 +113,7 @@ public class GenericDao<T> {
         session.close();
         return list;
     }
+
     /**
      * Returns an open session from session factory
      * @return session

@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import testUtils.Database;
 
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -92,5 +93,13 @@ public class UserDaoTest {
     void getAllSuccess() {
         List<User> users = dao.getAll();
         assertEquals(5, users.size());
+    }
+
+    @Test
+    void getByUserIdSuccess() {
+
+        User user = (User) dao.getById(5);
+        Set<Run> runs = user.getRuns();
+        System.out.println(runs);
     }
 }

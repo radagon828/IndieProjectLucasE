@@ -91,9 +91,11 @@ public class GameDaoTest {
     }
 
     @Test
-    void getByStringSuccess() {
+    void getByTitleSuccess() {
         String value = "haunt";
         List<Game> games = dao.getByString("title",value);
         System.out.println(games);
     }
+
+
 }

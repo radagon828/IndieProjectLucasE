@@ -8,8 +8,13 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+
+import entity.Run;
+import entity.Technique;
 import entity.User;
 import persistance.GenericDao;
+
+import java.util.Set;
 
 
 @Path("/profiles")
@@ -24,8 +29,11 @@ public class Profile {
         GenericDao dao = new GenericDao(User.class);
 
         User user = (User) dao.getById(userId);
-
+        Set<Run> runs = user.getRuns();
+        Set<Technique> techniques = user.getTechniques();
         request.setAttribute("profile", user);
+        request.setAttribute("runs", runs);
+        request.setAttribute("techniques", techniques);
         request.getRequestDispatcher("/profile.jsp")
                 .forward(request, response);
     }
