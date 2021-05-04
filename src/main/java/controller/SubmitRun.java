@@ -20,32 +20,30 @@ import java.io.IOException;
  * @auther Lucas Eddy
  */
 @WebServlet(
-        urlPatterns = {"/signUp"}
+        urlPatterns = {"/submitRun"}
 )
-public class SignUp extends HttpServlet {
+public class SubmitRun extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        GenericDao userDao = new GenericDao(User.class);
+//        GenericDao userDao = new GenericDao(User.class);
+//
+//        User user = new User();
+//        user.setUserName(req.getParameter("username"));
+//        user.setUserEmail(req.getParameter("email"));
+//        user.setPassword(req.getParameter("password"));
+//
+//        Role role = new Role("user", user.getUserName());
+//
+//        user.addRole(role);
+//
+//        userDao.insert(user);
+//
+//        logger.debug("Added user:", user);
 
-        User user = new User();
-        user.setUserName(req.getParameter("username"));
-        user.setUserEmail(req.getParameter("email"));
-        user.setPassword(req.getParameter("password"));
-
-        Role role = new Role("user", user.getUserName());
-
-        user.addRole(role);
-
-        userDao.insert(user);
-
-        logger.debug("Added user:", user);
-
-        req.setAttribute("newUserId", user.getId());
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/signUpSuccess.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/submissionSuccess.jsp");
         dispatcher.forward(req, resp);
     }
 }

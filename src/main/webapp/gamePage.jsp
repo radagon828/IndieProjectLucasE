@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html lang="en">
-
+<head>
 <%@include file="head.jsp"%>
-
+</head>
 <body>
     <%@ include file="navbar.jsp"%>
     <main class="container-fluid mt-2">
@@ -24,6 +25,9 @@
                             <a class="nav-link text-info" id="${category.categoryNameCon}-tab" data-toggle="tab" href="#${category.categoryNameCon}" role="tab">${category.categoryName}</a>
                         </li>
                     </c:forEach>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="techniques-tab" data-toggle="tab" href="#techniques" role="tab">Techniques</a>
+                        </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <c:forEach var="content" items="${categoriesTwo}">
@@ -35,7 +39,7 @@
                                     </button>
                                 </li>
                                 <li class="nav-item">
-                                    <button type="button" class="btn btn-primary"><a class="nav-link text-light" href="#runsubmit">Tech Videos</a></button>
+                                    <button type="button" class="btn btn-primary"><a class="nav-link text-light" href="games/${game.id}/submitRun">Submit Run</a></button>
                                 </li>
                             </ul>
                             <!-- Modal -->
@@ -69,12 +73,30 @@
                                         <td>${run.user.userName}</td>
                                         <td>${run.time}</td>
                                         <td>${run.platform}</td>
-                                        <td>${run.date}</td>
+                                        <td>${fn:substring(run.date, 0, 10)}</td>
                                     </tr>
                                 </c:forEach>
                             </table>
                         </div>
                     </c:forEach>
+                    <div class="tab-pane fade" id="techniques" role="tabpanel">
+                        <table>
+                            <tr>
+                                <th>Title</th>
+                                <th>Runner</th>
+                                <th>Description</th>
+                                <th>Submission Date</th>
+                            </tr>
+                            <c:forEach var="tech" items="${game.techniques}">
+                                <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/tech/${tech.id}">
+                                    <td>${tech.title}</td>
+                                    <td><a href="profiles/${tech.user.id}">${tech.user.Id}</a></td>
+                                    <td>${tech.description}</td>
+                                    <td>${fn:substring(tech.submissionDate, 0, 10)}</td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
                 </div>
             </section>
         </div>

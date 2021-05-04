@@ -1,3 +1,13 @@
 .clickable-row:hover {
     background-color: darkgrey;
 }
+
+.clickable-row {
+    border-bottom: brown solid 1px;
+    margin-bottom: 2em;
+}
+
+.panel {
+    border-radius: 1em;
+    background-color: lightslategrey;
+}

@@ -16,7 +16,7 @@
 <%@ include file="navbar.jsp"%>
 
 <h2>Sign Up Form</h2>
-<form id="signUpForm" method="post" action="SignUp">
+<form id="signUpForm" method="post" action="signUp">
     <p>* denotes a required field</p>
     <p>
         <label for="username">UserName* (min 4 characters))</label>

@@ -50,5 +50,22 @@ public class FindGame {
                 .forward(request, response);
     }
 
+    @GET
+    @Path("{game_id}/submitRun")
+    public void getRunSubmit(@Context HttpServletRequest request,
+                        @Context HttpServletResponse response, @PathParam("game_id") int gameId) throws Exception
+    {
+        GenericDao dao = new GenericDao(Game.class);
+
+        Game game = (Game) dao.getById(gameId);
+        Set<RunCategory> categories = game.getCategories();
+        Set<RunCategory> categoriesTwo = game.getCategories();
+        request.setAttribute("game", game);
+        request.setAttribute("categories", categories);
+
+        request.getRequestDispatcher("/runSubmission.jsp")
+                .forward(request, response);
+    }
+
 
 }

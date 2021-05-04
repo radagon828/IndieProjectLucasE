@@ -1,4 +1,5 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <%@include file="head.jsp"%>
@@ -34,7 +35,7 @@
                                 <td><a href="games/${run.game.id}">${run.game.title}</a></td>
                                 <td>${run.category.categoryName}</td>
                                 <td>${run.time}</td>
-                                <td>${run.date}</td>
+                                <td>${fn:substring(run.date, 0, 10)}</td>
                             </tr>
                         </c:forEach>
                     </table>
@@ -47,7 +48,7 @@
                                 <td><a href="games/${tech.game.id}">${tech.game.title}</a></td>
                                 <td>${tech.title}</td>
                                 <td>${tech.description}</td>
-                                <td>${tech.submissionDate}</td>
+                                <td>${fn:substring(tech.submissionDate, 0, 10)}</td>
                             </tr>
                         </c:forEach>
                     </table>

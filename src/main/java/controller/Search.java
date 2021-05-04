@@ -1,6 +1,7 @@
 package controller;
 
 import entity.Game;
+import entity.Technique;
 import persistance.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -21,22 +22,30 @@ public class Search extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        GenericDao gameDao;
-        gameDao = new GenericDao(Game.class);
+        GenericDao gameDao = new GenericDao(Game.class);
+        GenericDao techDao = new GenericDao(Technique.class);
 
+        List<Technique> techniques;
         List<Game> games;
+
+        Technique technique = new Technique("Results not found", "Results not found",
+                "Results not found", "Results not found", "Resutls not found");
         Game game = new Game("Results not found", "Results not found", "Results not found");
 
         if (req.getParameter("searchValue") == null || req.getParameter("searchValue") == "") {
             games = new ArrayList<>();
             games.add(game);
+            techniques = new ArrayList<>();
+            techniques.add(technique);
         } else {
             String searchWord = req.getParameter("searchValue");
             games = gameDao.getByString("title", searchWord);
+            techniques = techDao.getByString("title", searchWord);
         }
-        req.setAttribute("games", games);
 
-        req.setAttribute("newValue", "hello this is a test");
+        req.setAttribute("games", games);
+        req.setAttribute("techniques", techniques);
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
         dispatcher.forward(req, resp);
     }

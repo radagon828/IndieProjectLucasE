@@ -11,7 +11,7 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="nav-item"><a class="nav-link text-light" href="games">Games List</a></li>
-            <li class="nav-item"><a class="nav-link text-light" href="techVideos.jsp">Tech Videos</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="techniques">Tech Videos</a></li>
         </ul>
             <form class="form-inline my-2 my-lg-0" name="searchData" action="searchGame" method="get">
                 <input class="form-control mr-sm-2" type="text" name="searchValue" id="searchValue">

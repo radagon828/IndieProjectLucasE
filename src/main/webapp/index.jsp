@@ -5,7 +5,8 @@
 <%@ page import="entity.Technique" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="myTitle" value="Home" />
 <%
 
@@ -43,7 +44,7 @@
                                         <td>${recentTech.title}</td>
                                         <td><a href="profiles/${recentTech.user.id}">${recentTech.user.userName}</a></td>
                                         <td>${recentTech.description}</td>
-                                        <td>${recentTech.submissionDate}</td>
+                                        <td>${fn:substring(recentTech.submissionDate, 0, 10)}</td>
                                     </tr>
                                 </c:forEach>
                             </table>
@@ -62,7 +63,7 @@
                                         <td>${recentRun.category.categoryName}</td>
                                         <td><a href="profiles/${recentRun.user.id}">${recentRun.user.userName}</a></td>
                                         <td>${recentRun.time}</td>
-                                        <td>${recentRun.date}</td>
+                                        <td>${fn:substring(recentRun.submissionDate, 0, 10)}</td>
                                     </tr>
                                 </c:forEach>
                             </table>

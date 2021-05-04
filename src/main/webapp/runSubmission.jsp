@@ -12,12 +12,27 @@
 <body>
 <%@ include file="navbar.jsp"%>
 <div class="submitContent">
-    <form method="post">
-        <label for="time">Category</label>
-        <input type="text" name="time" id="time"><br />
-        <label for="videoLink">Video Link*</label>
-        <input type="text" name="videoLink" id="videoLink"><br />
-        <input type="submit" value="Submit Run">
+    <form id="signUpForm" method="post" action="submitRun">
+        <p>* denotes a required field</p>
+        <p>
+            <label for="username">UserName* (min 4 characters))</label>
+            <input id="username" name="username" minlength="4" type="text" required>
+        </p>
+        <p>
+            <label for="email">E-Mail*</label>
+            <input id="email" type="email" name="email" required>
+        </p>
+        <p>
+            <label for="password">Password*</label>
+            <input id="password" name="password" type="password" required>
+        </p>
+        <p>
+            <label for="confirm_password">Confirm password*</label>
+            <input id="confirm_password" name="confirm_password" type="password" required>
+        </p>
+        <p>
+            <input class="submit" type="submit" value="Submit">
+        </p>
     </form>
 </div>
 </body>
