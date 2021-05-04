@@ -14,9 +14,9 @@
                 <div class="panel-heading">${profile.userName}</div>
                 <div class="panel-body">
                     <p>${profile.userEmail}</p>
-<%--                    <c:if test="${profile.userName pageContext.request.remoteUser}">--%>
-<%--                        <p>edit profile</p>--%>
-<%--                    </c:if>--%>
+                    <c:if test="${profile.userName == pageContext.request.remoteUser}">
+                        <p><a href="profiles/${profile.userName}/editProfile">Edit Profile</a></p>
+                    </c:if>
                 </div>
             </div>
         </section>
@@ -31,7 +31,7 @@
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="runs" role="tabpanel" aria-labelledby="run-tab">
-                    <table>
+                    <table class="table">
                         <c:forEach var="run" items="${runs}">
                             <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/run/${run.id}">
                                 <td><img src="${run.game.imagePth}" alt="gameImage.png" /></td>
@@ -44,7 +44,7 @@
                     </table>
                 </div>
                 <div class="tab-pane fade" id="tech" role="tabpanel" aria-labelledby="tech-tab">
-                    <table>
+                    <table class="table">
                         <c:forEach var="tech" items="${techniques}">
                             <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/tech/${tech.id}">
                                 <td><img src="${tech.game.imagePth}" alt="gameImage.png" /></td>

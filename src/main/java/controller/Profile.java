@@ -41,4 +41,28 @@ public class Profile {
         request.getRequestDispatcher("/profile.jsp")
                 .forward(request, response);
     }
+
+    @GET
+    @Path("{user_name}/editProfile")
+    public void getEditProfile(@PathParam("user_name") String userName,
+                           @Context HttpServletRequest request,
+                           @Context HttpServletResponse response) throws Exception
+    {
+        GenericDao dao = new GenericDao(User.class);
+
+        String page;
+
+        List<User> userList = dao.getByString("userName", userName);
+        User user = userList.get(0);
+
+        if (user.getUserName().equals(request.getRemoteUser())) {
+            page = "/editProfile.jsp";
+        } else {
+            page = "/general-error.jsp";
+        }
+
+        request.setAttribute("profile", user);
+        request.getRequestDispatcher(page)
+                .forward(request, response);
+    }
 }

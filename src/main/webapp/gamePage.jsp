@@ -34,7 +34,7 @@
                         <div class="tab-pane fade" id="${content.categoryNameCon}" role="tabpanel">
                             <ul class="nav navbar-nav">
                                 <li class="nav-item">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#${content.categoryNameCon}Modal">
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#${content.categoryNameCon}Modal">
                                         View Rules
                                     </button>
                                 </li>

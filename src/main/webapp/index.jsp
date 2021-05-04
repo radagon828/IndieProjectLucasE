@@ -16,8 +16,6 @@
         GenericDao techDao = new GenericDao(Technique.class);
         List<Technique> techniques = techDao.getAll();
 
-//        runs.subList(10, runs.size()).clear();
-//        techniques.subList(10, techniques.size()).clear();
 
         request.setAttribute("techniques", techniques);
         request.setAttribute("runs", runs);
@@ -33,7 +31,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 mt-2">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default bg-light">
                         <div class="panel-heading">Latest Techniques</div>
                         <div class="panel-body">
                             <table class="table">
@@ -51,7 +49,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 mt-2">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default bg-light">
                         <div class="panel-heading">Latest Runs</div>
                         <div class="panel-body">
                             <table class="table">

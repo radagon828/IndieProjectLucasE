@@ -27,7 +27,6 @@
                         <td>${game.description}</td>
                     </tr>
                 </c:forEach>
-                <tr><td>${newValue}</td></tr>
             </table>
         </div>
         <div class="tab-pane fade" id="tech" role="tabpanel" aria-labelledby="tech-tab">
