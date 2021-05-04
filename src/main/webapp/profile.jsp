@@ -35,7 +35,7 @@
                 <div class="tab-pane fade show active" id="runs" role="tabpanel" aria-labelledby="run-tab">
                     <table>
                         <c:forEach var="run" items="${runs}">
-                            <tr class="clickable-row" data-href="videos/run/${run.id}">
+                            <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/run/${run.id}">
                                 <td><img src="${run.game.imagePth}" alt="gameImage.png" /></td>
                                 <td>${run.game.title}</td>
                                 <td>${run.category}</td>
@@ -48,7 +48,7 @@
                 <div class="tab-pane fade" id="tech" role="tabpanel" aria-labelledby="tech-tab">
                     <table>
                         <c:forEach var="tech" items="${techniques}">
-                            <tr class="clickable-row" data-href="videos/tech/${tech.id}">
+                            <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/tech/${tech.id}">
                                 <td><img src="${tech.game.imagePth}" alt="gameImage.png" /></td>
                                 <td>${tech.game.title}</td>
                                 <td>${tech.title}</td>

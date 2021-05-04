@@ -31,11 +31,35 @@ public class Game {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "game", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<RunCategory> categories;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "game", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Run> runs;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "game", cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Technique> techniques;
+
+    /**
+     * Instantiates a new Game.
+     */
+    public Game() {
+
+    }
+
+    /**
+     * Instantiates a new Game.
+     *
+     * @param title       the title
+     * @param description the description
+     * @param imagePth    the image pth
+     */
+    public Game (String title, String description, String imagePth) {
+        this.title = title;
+        this.description = description;
+        this.imagePth = imagePth;
+    }
 
     /**
      * Gets runs.
@@ -73,26 +97,22 @@ public class Game {
         this.techniques = techniques;
     }
 
-
-
     /**
-     * Instantiates a new Game.
+     * Gets categories.
+     *
+     * @return the categories
      */
-    public Game() {
-
+    public Set<RunCategory> getCategories() {
+        return categories;
     }
 
     /**
-     * Instantiates a new Game.
+     * Sets categories.
      *
-     * @param title       the title
-     * @param description the description
-     * @param imagePth    the image pth
+     * @param categories the categories
      */
-    public Game (String title, String description, String imagePth) {
-        this.title = title;
-        this.description = description;
-        this.imagePth = imagePth;
+    public void setCategories(Set<RunCategory> categories) {
+        this.categories = categories;
     }
 
     /**
@@ -160,7 +180,7 @@ public class Game {
     }
 
     /**
-     * Remove book.
+     * Remove run.
      *
      * @param run the run
      */
@@ -189,10 +209,40 @@ public class Game {
         technique.setGame(null);
     }
 
+    /**
+     * Add category.
+     *
+     * @param category the category
+     */
+    public void addCategory(RunCategory category) {
+        categories.add(category);
+        category.setGame(this);
+    }
+
+    /**
+     * Remove category.
+     *
+     * @param category the category
+     */
+    public void removeCategory(RunCategory category) {
+        categories.remove(category);
+        category.setGame(null);
+    }
+
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param game_id the game id
+     */
     public void setId(int game_id) {
         this.id = game_id;
     }

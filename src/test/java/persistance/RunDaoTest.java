@@ -2,6 +2,7 @@ package persistance;
 
 import entity.Game;
 import entity.Run;
+import entity.RunCategory;
 import entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,7 +33,7 @@ public class RunDaoTest {
     @Test
     void getByIdSuccess() {
         Run retrievedRun = (Run)dao.getById(1);
-        assertEquals("Normal Mode, Any%", retrievedRun.getCategory());
+        assertEquals("Normal Mode", retrievedRun.getCategory().getCategoryName());
 
     }
 
@@ -46,17 +47,20 @@ public class RunDaoTest {
 
         GenericDao gameDao = new GenericDao(Game.class);
         GenericDao UserDao = new GenericDao(User.class);
+        GenericDao CategoryDao = new GenericDao(RunCategory.class);
 
         Game game = (Game)gameDao.getById(1);
         User user = (User)UserDao.getById(1);
+        RunCategory category = (RunCategory)CategoryDao.getById(2);
 
-        Run newRun = new Run("Normal Mode, Any%", "01:20:32", "PS2", "" + formatter.format(date) + "", "https://www.youtube.com/watch?v=_81rRLpYFBU");
+        Run newRun = new Run("01:20:32", "PS2", "" + formatter.format(date) + "", "https://www.youtube.com/watch?v=_81rRLpYFBU");
         game.addRun(newRun);
         user.addRun(newRun);
+        category.addRun(newRun);
         int id = dao.insert(newRun);
         assertNotEquals(0,id);
         Run insertedRun = (Run)dao.getById(id);
-        assertEquals("Normal Mode, Any%", insertedRun.getCategory());
+        assertEquals("A Ending, New Game +", insertedRun.getCategory().getCategoryName());
     }
 
     /**

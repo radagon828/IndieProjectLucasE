@@ -27,7 +27,6 @@
 </head>
 <body>
     <%@ include file="navbar.jsp"%>
-
     <main class="mt-3">
         <div class="container-fluid">
             <div class="row">
@@ -37,7 +36,7 @@
                         <div class="panel-body">
                             <table>
                                 <c:forEach var="recentTech" items="${techniques}">
-                                    <tr class="clickable-row small" data-href="videos/tech/${recentTech.id}">
+                                    <tr class="clickable-row small border-bottom-1 border-dark" data-href="videos/tech/${recentTech.id}">
                                         <td><img src="${recentTech.game.imagePth}" alt="gameImage.png" /></td>
                                         <td>${recentTech.game.title}</td>
                                         <td>${recentTech.title}</td>
@@ -56,7 +55,7 @@
                         <div class="panel-body">
                             <table>
                                 <c:forEach var="recentRun" items="${runs}">
-                                    <tr class="clickable-row small" data-href="videos/run/${recentRun.id}">
+                                    <tr class="clickable-row small border-bottom-1 border-dark" data-href="videos/run/${recentRun.id}">
                                         <td><img src="${recentRun.game.imagePth}" alt="gameImage.png" /></td>
                                         <td>${recentRun.game.title}</td>
                                         <td>${recentRun.category}</td>

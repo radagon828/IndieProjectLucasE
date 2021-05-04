@@ -18,8 +18,6 @@ public class Run {
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
 
-    @Column(name = "category")
-    private String category;
 
     @Column(name = "time")
     private String time;
@@ -35,6 +33,11 @@ public class Run {
 
     @JsonBackReference
     @ManyToOne
+    @JoinColumn(name="run_category_id")
+    private RunCategory category;
+
+    @JsonBackReference
+    @ManyToOne
     @JoinColumn(name="game_id")
     private Game game;
 
@@ -46,14 +49,12 @@ public class Run {
     /**
      * Instantiates a new Run.
      *
-     * @param category  the category
      * @param time      the time
      * @param platform  the platform
      * @param date      the date
      * @param videoLink the video link
      */
-    public Run(String category, String time, String platform, String date, String videoLink) {
-        this.category = category;
+    public Run( String time, String platform, String date, String videoLink) {
         this.time = time;
         this.platform = platform;
         this.date = date;
@@ -90,7 +91,7 @@ public class Run {
      *
      * @return the category
      */
-    public String getCategory() {
+    public RunCategory getCategory() {
         return category;
     }
 
@@ -99,7 +100,7 @@ public class Run {
      *
      * @param category the category
      */
-    public void setCategory(String category) {
+    public void setCategory(RunCategory category) {
         this.category = category;
     }
 
@@ -216,12 +217,12 @@ public class Run {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Run run = (Run) o;
-        return id == run.id && Objects.equals(category, run.category) && Objects.equals(time, run.time) && Objects.equals(platform, run.platform) && Objects.equals(date, run.date) && Objects.equals(videoLink, run.videoLink);
+        return id == run.id && Objects.equals(time, run.time) && Objects.equals(platform, run.platform) && Objects.equals(date, run.date) && Objects.equals(videoLink, run.videoLink);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, category, time, platform, date, videoLink);
+        return Objects.hash(id, time, platform, date, videoLink);
     }
 
     @Override

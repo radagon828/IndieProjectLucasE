@@ -77,8 +77,8 @@ public class GameDaoTest {
     @Test
     void cascadeDeleteSuccess() {
         GenericDao runDao = new GenericDao(Run.class);
-        dao.delete(dao.getById(5));
-        assertNull(dao.getById(5));
+        dao.delete(dao.getById(4));
+        assertNull(dao.getById(4));
         assertNull(runDao.getById(1));
     }
     /**
@@ -87,7 +87,7 @@ public class GameDaoTest {
     @Test
     void getAllSuccess() {
         List<Game> games = dao.getAll();
-        assertEquals(5, games.size());
+        assertEquals(4, games.size());
     }
 
     @Test
