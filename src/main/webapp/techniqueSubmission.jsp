@@ -3,7 +3,7 @@
 <head>
     <%@include file="head.jsp"%>
     <script src="js/jquery.validate.js"></script>
-    <script src="js/submit-run.js"></script>
+    <script src="js/submit-tech.js"></script>
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
@@ -16,11 +16,18 @@
                 <p>* denotes a required field</p>
                 <div class="form-group">
                     <label for="videoTitle">Title*</label>
-                    <input id="videoTitle" type="videoTitle" name="platform" required>
+                    <input id="videoTitle" type="videoTitle" name="videoTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="videoType">Type*</label>
+                    <select id="videoType" name="videoType" type="videoType" class="form-control">
+                        <option value="a single trick">A single trick</option>
+                        <option value="walkthrough">Walkthrough</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input id="description" name="description"  required>
+                    <input id="description" name="description" type="description" required>
                 </div>
                 <div class="form-group">
                     <label for="videoLink">Embedded Youtube Link*</label>

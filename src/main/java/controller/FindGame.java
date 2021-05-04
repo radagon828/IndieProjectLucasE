@@ -67,7 +67,7 @@ public class FindGame {
     }
 
     @GET
-    @Path("{game_id}/submitTechnique")
+    @Path("{game_id}/submitTech")
     public void getTechniqueSubmit(@Context HttpServletRequest request,
                              @Context HttpServletResponse response, @PathParam("game_id") int gameId) throws Exception
     {

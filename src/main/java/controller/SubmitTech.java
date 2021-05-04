@@ -42,7 +42,8 @@ public class SubmitTech extends HttpServlet {
         int gameId = Integer.parseInt(req.getParameter("gameId"));
         Game game = (Game)gameDao.getById(gameId);
 
-        Technique newTech = new Technique("Resident Evil Remake Commentary", "this video is a commentated run of REmake", "walkthrough", "https://www.youtube.com/watch?v=N-TrW-LN7Xw", "" + formatter.format(date) + "");
+        Technique newTech = new Technique(req.getParameter("videoTitle"), req.getParameter("description"),
+                req.getParameter("videoType"), req.getParameter("videoLink"), "" + formatter.format(date) + "");
         game.addTechnique(newTech);
         user.addTechnique(newTech);
         techDao.insert(newTech);

@@ -1,10 +1,10 @@
 $().ready(function() {
     $("#submitTechForm").validate({
         rules: {
-            platform: {
+            videoTitle: {
                 required: true,
             },
-            runTime: {
+            description: {
                 required: true,
 
             },
@@ -13,11 +13,11 @@ $().ready(function() {
             }
         },
         messages: {
-            platform: {
-                required: "Please enter the name of the platform you performed the run on",
+            videoTitle: {
+                required: "Please enter your video title",
             },
             runTime: {
-                required: "Please provide you run time",
+                required: "Please provide a video description",
             },
             videoLink: {
                 required: "Please provide an embedded youtube link",
