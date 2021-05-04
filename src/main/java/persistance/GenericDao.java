@@ -114,6 +114,18 @@ public class GenericDao<T> {
         return list;
     }
 
+//    public <T>T getByUserName(String userName) {
+//        Session session = getSession();
+//
+//        Criteria criteria = session.createCriteria(type);
+//        T Entity entity;
+//         = (T) criteria.add(Restrictions.eq("userName", userName))
+//                .uniqueResult();
+//
+//        session.close();
+//        return entity;
+//    }
+
     /**
      * Returns an open session from session factory
      * @return session

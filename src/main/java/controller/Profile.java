@@ -14,6 +14,7 @@ import entity.Technique;
 import entity.User;
 import persistance.GenericDao;
 
+import java.util.List;
 import java.util.Set;
 
 
@@ -21,16 +22,19 @@ import java.util.Set;
 public class Profile {
 
     @GET
-    @Path("{user_id}")
-    public void getProfile(@PathParam("user_id") int userId,
+    @Path("{user_name}")
+    public void getProfile(@PathParam("user_name") String userName,
                            @Context HttpServletRequest request,
                            @Context HttpServletResponse response) throws Exception
     {
         GenericDao dao = new GenericDao(User.class);
 
-        User user = (User) dao.getById(userId);
+        List<User> userList = dao.getByString("userName", userName);
+        User user = userList.get(0);
+
         Set<Run> runs = user.getRuns();
         Set<Technique> techniques = user.getTechniques();
+
         request.setAttribute("profile", user);
         request.setAttribute("runs", runs);
         request.setAttribute("techniques", techniques);

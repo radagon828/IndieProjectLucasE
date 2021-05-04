@@ -39,7 +39,7 @@
                                     </button>
                                 </li>
                                 <li class="nav-item">
-                                    <button type="button" class="btn btn-primary"><a class="nav-link text-light" href="games/${game.id}/submitRun">Submit Run</a></button>
+                                    <a class="nav-link text-light" href="games/${game.id}/submitRun">Submit Run</a>
                                 </li>
                             </ul>
                             <!-- Modal -->
@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <table>
+                            <table class="table">
                                 <tr>
                                     <th>Runner</th>
                                     <th>Time</th>
@@ -80,7 +80,7 @@
                         </div>
                     </c:forEach>
                     <div class="tab-pane fade" id="techniques" role="tabpanel">
-                        <table>
+                        <table class="table">
                             <tr>
                                 <th>Title</th>
                                 <th>Runner</th>
@@ -90,7 +90,7 @@
                             <c:forEach var="tech" items="${game.techniques}">
                                 <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/tech/${tech.id}">
                                     <td>${tech.title}</td>
-                                    <td><a href="profiles/${tech.user.id}">${tech.user.Id}</a></td>
+                                    <td><a href="profiles/${tech.user.userName}">${tech.user.userName}</a></td>
                                     <td>${tech.description}</td>
                                     <td>${fn:substring(tech.submissionDate, 0, 10)}</td>
                                 </tr>

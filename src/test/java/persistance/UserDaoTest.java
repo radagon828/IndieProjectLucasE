@@ -96,10 +96,9 @@ public class UserDaoTest {
     }
 
     @Test
-    void getByUserIdSuccess() {
-
-        User user = (User) dao.getById(5);
-        Set<Run> runs = user.getRuns();
-        System.out.println(runs);
+    void getUserSuccess() {
+        List<User> user = dao.getByString("userName", "carci");
+        System.out.println(user.get(0));
     }
+
 }

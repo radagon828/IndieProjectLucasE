@@ -14,6 +14,9 @@
                 <div class="panel-heading">${profile.userName}</div>
                 <div class="panel-body">
                     <p>${profile.userEmail}</p>
+<%--                    <c:if test="${profile.userName pageContext.request.remoteUser}">--%>
+<%--                        <p>edit profile</p>--%>
+<%--                    </c:if>--%>
                 </div>
             </div>
         </section>

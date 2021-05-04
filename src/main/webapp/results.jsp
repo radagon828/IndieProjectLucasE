@@ -21,7 +21,7 @@
         <div class="tab-pane fade show active" id="runs" role="tabpanel" aria-labelledby="run-tab">
             <table class="table mt-3">
                 <c:forEach items="${games}" var="game">
-                    <tr class="clickable-row small border-bottom-1 border-dark" data-href="games/${game.id}">
+                    <tr class="clickable-row border-bottom-1 border-dark" data-href="games/${game.id}">
                         <td>${game.imagePth}</td>
                         <td>${game.title}</td>
                         <td>${game.description}</td>

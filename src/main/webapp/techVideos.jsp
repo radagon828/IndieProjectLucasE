@@ -26,7 +26,7 @@
                 <td><img src="${tech.game.imagePth}" alt="gameImage.png" /></td>
                 <td><a href="games/${tech.game.id}">${tech.game.title}</a></td>
                 <td>${tech.title}</td>
-                <td><a href="profiles/${recentTech.user.id}">${tech.user.Id}</a></td>
+                <td><a href="profiles/${tech.user.userName}">${tech.user.userName}</a></td>
                 <td>${tech.description}</td>
                 <td>${fn:substring(tech.submissionDate, 0, 10)}</td>
             </tr>

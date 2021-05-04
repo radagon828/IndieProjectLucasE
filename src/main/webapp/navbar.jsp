@@ -21,12 +21,14 @@
             <c:when test="${pageContext.request.isUserInRole('admin')}">
                 <ul class="nav navbar-nav">
                     <li class="nav-item"><a class="nav-link text-light" href="logout.jsp">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="profiles/${pageContext.request.remoteUser}">Profile</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="admin.jsp">Admin</a></li>
                 </ul>
             </c:when>
             <c:when test="${pageContext.request.isUserInRole('user')}">
                 <ul class="nav navbar-nav">
                     <li class="nav-item"><a class="nav-link text-light" href="logout.jsp">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="profiles/${pageContext.request.remoteUser}">Profile</a></li>
                 </ul>
             </c:when>
             <c:otherwise>

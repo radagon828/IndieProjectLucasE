@@ -90,12 +90,12 @@ public class GameDaoTest {
         assertEquals(4, games.size());
     }
 
-    @Test
-    void getByTitleSuccess() {
-        String value = "haunt";
-        List<Game> games = dao.getByString("title",value);
-        System.out.println(games);
-    }
+//    @Test
+//    void getByTitleSuccess() {
+//        String value = "haunt";
+//        List<Game> games = dao.getByString("userName",value);
+//        System.out.println(games);
+//    }
 
 
 }

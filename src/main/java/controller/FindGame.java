@@ -59,7 +59,6 @@ public class FindGame {
 
         Game game = (Game) dao.getById(gameId);
         Set<RunCategory> categories = game.getCategories();
-        Set<RunCategory> categoriesTwo = game.getCategories();
         request.setAttribute("game", game);
         request.setAttribute("categories", categories);
 

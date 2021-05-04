@@ -8,13 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>logout</title>
+    <%@include file="head.jsp"%>
 </head>
 <body>
+<%@ include file="navbar.jsp"%>
 <%@ page session="true"%>
 
 User '<%=request.getRemoteUser()%>' has been logged out.
 
+<p></p>
 <% session.invalidate(); %>
 </body>
 </html>
