@@ -18,7 +18,6 @@ public class Run {
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
 
-
     @Column(name = "time")
     private String time;
 

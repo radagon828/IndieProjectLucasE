@@ -8,9 +8,12 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Context;
 
 import entity.Game;
+import entity.Run;
+import entity.RunCategory;
 import persistance.GenericDao;
 
 import java.util.List;
+import java.util.Set;
 
 
 @Path("/games")
@@ -38,8 +41,11 @@ public class FindGame {
         GenericDao dao = new GenericDao(Game.class);
 
         Game game = (Game) dao.getById(gameId);
-
+        Set<RunCategory> categories = game.getCategories();
+        Set<RunCategory> categoriesTwo = game.getCategories();
         request.setAttribute("game", game);
+        request.setAttribute("categories", categories);
+        request.setAttribute("categoriesTwo", categoriesTwo);
         request.getRequestDispatcher("/gamePage.jsp")
                 .forward(request, response);
     }

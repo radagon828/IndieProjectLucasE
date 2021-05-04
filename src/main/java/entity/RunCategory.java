@@ -23,6 +23,9 @@ public class RunCategory {
     @Column(name = "category_name")
     private String categoryName;
 
+    @Column(name = "category_name_con")
+    private String categoryNameCon;
+
     @Column(name= "category_rules")
     private String categoryRules;
 
@@ -182,5 +185,13 @@ public class RunCategory {
                 ", categoryName='" + categoryName + '\'' +
                 ", categoryRules=" + categoryRules +
                 '}';
+    }
+
+    public String getCategoryNameCon() {
+        return categoryNameCon;
+    }
+
+    public void setCategoryNameCon(String categoryNameCon) {
+        this.categoryNameCon = categoryNameCon;
     }
 }

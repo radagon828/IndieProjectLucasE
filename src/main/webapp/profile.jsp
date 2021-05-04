@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: student
-  Date: 5/2/21
-  Time: 12:02 AM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <%@include file="head.jsp"%>
@@ -37,8 +31,8 @@
                         <c:forEach var="run" items="${runs}">
                             <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/run/${run.id}">
                                 <td><img src="${run.game.imagePth}" alt="gameImage.png" /></td>
-                                <td>${run.game.title}</td>
-                                <td>${run.category}</td>
+                                <td><a href="games/${run.game.id}">${run.game.title}</a></td>
+                                <td>${run.category.categoryName}</td>
                                 <td>${run.time}</td>
                                 <td>${run.date}</td>
                             </tr>
@@ -50,7 +44,7 @@
                         <c:forEach var="tech" items="${techniques}">
                             <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/tech/${tech.id}">
                                 <td><img src="${tech.game.imagePth}" alt="gameImage.png" /></td>
-                                <td>${tech.game.title}</td>
+                                <td><a href="games/${tech.game.id}">${tech.game.title}</a></td>
                                 <td>${tech.title}</td>
                                 <td>${tech.description}</td>
                                 <td>${tech.submissionDate}</td>

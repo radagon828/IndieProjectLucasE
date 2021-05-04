@@ -5,6 +5,7 @@
 <%@ page import="entity.Technique" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="myTitle" value="Home" />
 <%
 
@@ -38,7 +39,7 @@
                                 <c:forEach var="recentTech" items="${techniques}">
                                     <tr class="clickable-row small border-bottom-1 border-dark" data-href="videos/tech/${recentTech.id}">
                                         <td><img src="${recentTech.game.imagePth}" alt="gameImage.png" /></td>
-                                        <td>${recentTech.game.title}</td>
+                                        <td><a href="games/${recentTech.game.id}">${recentTech.game.title}</a></td>
                                         <td>${recentTech.title}</td>
                                         <td><a href="profiles/${recentTech.user.id}">${recentTech.user.userName}</a></td>
                                         <td>${recentTech.description}</td>
@@ -57,8 +58,8 @@
                                 <c:forEach var="recentRun" items="${runs}">
                                     <tr class="clickable-row small border-bottom-1 border-dark" data-href="videos/run/${recentRun.id}">
                                         <td><img src="${recentRun.game.imagePth}" alt="gameImage.png" /></td>
-                                        <td>${recentRun.game.title}</td>
-                                        <td>${recentRun.category}</td>
+                                        <td><a href="games/${recentRun.game.id}">${recentRun.game.title}</a></td>
+                                        <td>${recentRun.category.categoryName}</td>
                                         <td><a href="profiles/${recentRun.user.id}">${recentRun.user.userName}</a></td>
                                         <td>${recentRun.time}</td>
                                         <td>${recentRun.date}</td>
