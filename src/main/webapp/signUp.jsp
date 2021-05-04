@@ -18,22 +18,22 @@
 <h2>Sign Up Form</h2>
 <form id="signUpForm" method="post" action="signUp">
     <p>* denotes a required field</p>
-    <p>
+    <div class="form-group">
         <label for="username">UserName* (min 4 characters))</label>
         <input id="username" name="username" minlength="4" type="text" required>
-    </p>
-    <p>
+    </div>
+    <div class="form-group">
         <label for="email">E-Mail*</label>
         <input id="email" type="email" name="email" required>
-    </p>
-    <p>
+    </div>
+    <div class="form-group">
         <label for="password">Password*</label>
         <input id="password" name="password" type="password" required>
-    </p>
-    <p>
+    </div>
+    <div class="form-group">
         <label for="confirm_password">Confirm password*</label>
         <input id="confirm_password" name="confirm_password" type="password" required>
-    </p>
+    </div>
     <p>
         <input class="submit" type="submit" value="Submit">
     </p>

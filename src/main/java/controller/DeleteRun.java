@@ -1,6 +1,7 @@
 package controller;
 
 import entity.Role;
+import entity.Run;
 import entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,32 +16,31 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * this servlet adds a new user
+ * this servlet deletes a run
  *
- * @auther Lucas Eddy
+ * @author Lucas Eddy
  */
 @WebServlet(
-        urlPatterns = {"/editProfile"}
+        urlPatterns = {"/deleteRun"}
 )
-public class EditProfile extends HttpServlet {
+public class DeleteRun extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        GenericDao userDao = new GenericDao(User.class);
+        GenericDao runDao = new GenericDao(Run.class);
 
-        int userId = Integer.parseInt(req.getParameter("userId"));
+        int runId = Integer.parseInt(req.getParameter("runId"));
+        Run run = (Run) runDao.getById(runId);
+        String username = run.getUser().getUserName();
+        String confirm = req.getParameter("confirm");
+        logger.debug("Deletion answer: ", confirm);
 
-        User user = (User) userDao.getById(userId);
-        user.setUserName(req.getParameter("username"));
-        user.setUserEmail(req.getParameter("email"));
-
-        userDao.saveOrUpdate(user);
-
-        logger.debug("Edited user:", user);
-
-        User userAfterUpdate = (User) userDao.getById(userId);
+        if (confirm.equals("yes")) {
+            logger.info("deleted run:", run);
+            runDao.delete(run);
+        }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req, resp);

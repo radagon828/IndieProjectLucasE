@@ -39,6 +39,9 @@
                                 <td>${run.category.categoryName}</td>
                                 <td>${run.time}</td>
                                 <td>${fn:substring(run.date, 0, 10)}</td>
+                                <c:if test="${profile.userName == pageContext.request.remoteUser}">
+                                    <td><a href="profiles/${profile.userName}/${run.id}/deleteRun">Delete</a></td>
+                                </c:if>
                             </tr>
                         </c:forEach>
                     </table>

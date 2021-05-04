@@ -65,4 +65,29 @@ public class Profile {
         request.getRequestDispatcher(page)
                 .forward(request, response);
     }
+
+    @GET
+    @Path("{user_name}/{run_id}/deleteRun")
+    public void getDeleteRun(@PathParam("user_name") String userName,
+                             @PathParam("run_id") int runId,
+                               @Context HttpServletRequest request,
+                               @Context HttpServletResponse response) throws Exception
+    {
+        GenericDao dao = new GenericDao(User.class);
+
+        String page;
+
+        List<User> userList = dao.getByString("userName", userName);
+        User user = userList.get(0);
+
+        if (user.getUserName().equals(request.getRemoteUser())) {
+            page = "/deleteRun.jsp";
+        } else {
+            page = "/general-error.jsp";
+        }
+        request.setAttribute("runId", runId);
+        request.setAttribute("profile", user);
+        request.getRequestDispatcher(page)
+                .forward(request, response);
+    }
 }

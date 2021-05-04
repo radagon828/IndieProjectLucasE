@@ -2,6 +2,8 @@ package controller;
 
 import entity.Game;
 import entity.Technique;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import persistance.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -19,6 +21,8 @@ import java.util.List;
 )
 
 public class Search extends HttpServlet {
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -42,6 +46,8 @@ public class Search extends HttpServlet {
             games = gameDao.getByString("title", searchWord);
             techniques = techDao.getByString("title", searchWord);
         }
+
+        logger.debug("Searching based on key:", req.getParameter("searchValue"));
 
         req.setAttribute("games", games);
         req.setAttribute("techniques", techniques);
