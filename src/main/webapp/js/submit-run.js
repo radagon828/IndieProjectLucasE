@@ -1,39 +1,28 @@
 $().ready(function() {
-    $("#signUpForm").validate({
+    $("#submitRunForm").validate({
         rules: {
-            username: {
+            platform: {
                 required: true,
-                minlength: 4
             },
-            password: {
+            time: {
                 required: true,
-                minlength: 5
+                minlength: 9,
             },
-            confirm_password: {
+            videoLink: {
                 required: true,
-                minlength: 5,
-                equalTo: "#password"
-            },
-            email: {
-                required: true,
-                email: true
             }
         },
         messages: {
-            username: {
-                required: "Please enter a username",
-                minlength: "Your username must consist of at least 2 characters"
+            platform: {
+                required: "Please enter the name of the platform you performed the run on",
             },
-            password: {
-                required: "Please provide a password",
-                minlength: "Your password must be at least 5 characters long"
+            time: {
+                required: "Please provide you run time",
+                minlength: "Your time must follow the HH:mm:ss format"
             },
-            confirm_password: {
-                required: "Please provide a password",
-                minlength: "Your password must be at least 5 characters long",
-                equalTo: "Please enter the same password as above"
-            },
-            email: "Please enter a valid email address"
+            videoLink: {
+                required: "Please provide an embedded youtube link",
+            }
         }
     });
 })
