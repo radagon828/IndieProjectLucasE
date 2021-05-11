@@ -79,3 +79,4 @@ Tasks Completed:
 
 Tasks Completed:
 -added ability for admin to approve runs
+-Added image for all of the games on the app
