@@ -1,21 +1,26 @@
-<Context docBase="IndieProject" path="/IndieProject_war" reloadable="true">
-    <Realm className="org.apache.catalina.realm.JDBCRealm"
-           driverName="com.mysql.cj.jdbc.Driver"
-           connectionURL="jdbc:mysql://localhost:3306/ScaryRuns?user=root&amp;password=student"
-           userTable="user" userNameCol="user_name" userCredCol="password"
-           userRoleTable="role" roleNameCol="role_name" >
-    </Realm>
+
+<!--war file-->
+
+<!--<Context docBase="IndieProject" path="/IndieProject_war" reloadable="true">-->
+<!--    <Realm className="org.apache.catalina.realm.JDBCRealm"-->
+<!--           driverName="com.mysql.cj.jdbc.Driver"-->
+<!--           connectionURL="jdbc:mysql://localhost:3306/ScaryRuns?user=root&amp;password=student"-->
+<!--           userTable="user" userNameCol="user_name" userCredCol="password"-->
+<!--           userRoleTable="role" roleNameCol="role_name" >-->
+<!--    </Realm>-->
+
+<!--</Context>-->
+
+
+<!--AWS-->
+
+<Context docBase="IndieProject" path="/IndieProject" reloadable="true">
+<Realm className="org.apache.catalina.realm.JDBCRealm"
+       driverName="com.mysql.cj.jdbc.Driver"
+       connectionURL="jdbc:mysql://localhost:3306/ScaryRuns?user=tomcat&amp;password=IwDBvQzgZ7"
+       userTable="user" userNameCol="user_name" userCredCol="password"
+       userRoleTable="role" roleNameCol="role_name" >
+</Realm>
 
 </Context>
 
-<!--<Context docBase="IndieProject" path="/IndieProject" reloadable="true">-->
-<!--<Realm className="org.apache.catalina.realm.JDBCRealm"-->
-<!--       driverName="com.mysql.cj.jdbc.Driver"-->
-<!--       connectionURL="jdbc:mysql://localhost:3306/ScaryRuns?user=tomcat&amp;password=IWMLaMFaMF*%"-->
-<!--       userTable="user" userNameCol="user_name" userCredCol="password"-->
-<!--       userRoleTable="role" roleNameCol="role_name" >-->
-<!--</Realm>-->
-<!--</Context>-->
-
-<!--        #uBUs4XoxU9UsEw-->
-<!--        #student-->

@@ -1,4 +1,4 @@
-# Log
+# Journal
 ### Week 4
 Tasks Completed:
 - Created Java beans
@@ -73,3 +73,9 @@ Tasks Completed:
 ### Week 15
 Tasks Completed:
 -added ability to view individual game pages, profile pages and video pages
+-added abilty to submit your own runs and technique videos
+
+### Week 16
+
+Tasks Completed:
+-added ability for admin to approve runs
