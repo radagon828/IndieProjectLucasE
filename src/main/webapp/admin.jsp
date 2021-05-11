@@ -33,7 +33,7 @@
                     <table class="table">
                         <c:forEach var="run" items="${runs}">
                             <tr class="clickable-row small border-bottom-1 border-dark" data-href="videos/run/${recentRun.id}">
-                                <td><img src="${run.game.imagePth}" alt="gameImage.png" /></td>
+                                <td><img src="${run.game.imagePth}" alt="gameImage.png" width="50"/></td>
                                 <td><a href="games/${run.game.id}">${run.game.title}</a></td>
                                 <td>${run.category.categoryName}</td>
                                 <td><a href="profiles/${run.user.userName}">${run.user.userName}</a></td>

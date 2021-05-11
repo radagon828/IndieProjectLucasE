@@ -29,19 +29,13 @@ public class EditProfile extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         GenericDao userDao = new GenericDao(User.class);
-        GenericDao roleDao = new GenericDao(Role.class);
 
         int userId = Integer.parseInt(req.getParameter("userId"));
 
         User user = (User) userDao.getById(userId);
-        user.setUserName(req.getParameter("username"));
         user.setUserEmail(req.getParameter("email"));
 
-        Role role = (Role) roleDao.getById(user.getRole().getId());
-        role.setUser_name(req.getParameter("username"));
-
         userDao.saveOrUpdate(user);
-        roleDao.saveOrUpdate(role);
         logger.debug("Edited user:", user);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");

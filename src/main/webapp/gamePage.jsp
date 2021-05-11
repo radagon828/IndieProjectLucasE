@@ -12,8 +12,8 @@
             <section class="col-sm-4">
                 <div class="panel panel-default bg-light">
                     <div class="panel-heading">${game.title}</div>
-                    <div class="panel-body">
-                        <img src="${game.imagePth}" alt="${game.imagePth}.png"/>
+                    <div class="panel-body mx-auto">
+                        <img src="${game.imagePth}" alt="${game.imagePth}.png" width="200"/>
                         <p>${game.description}</p>
                         <p><a class="nav-link" href="games/${game.id}/submitTech">Submit Technique Video</a></p>
                     </div>

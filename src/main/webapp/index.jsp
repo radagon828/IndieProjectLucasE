@@ -37,7 +37,7 @@
                             <table class="table">
                                 <c:forEach var="recentTech" items="${techniques}">
                                     <tr class="clickable-row small border-bottom-1 border-dark" data-href="videos/tech/${recentTech.id}">
-                                        <td><img src="${recentTech.game.imagePth}" alt="gameImage.png" /></td>
+                                        <td><img src="${recentTech.game.imagePth}" alt="gameImage.png" width="50" /></td>
                                         <td><a href="games/${recentTech.game.id}">${recentTech.game.title}</a></td>
                                         <td>${recentTech.title}</td>
                                         <td><a href="profiles/${recentTech.user.userName}">${recentTech.user.userName}</a></td>
@@ -55,7 +55,7 @@
                             <table class="table">
                                 <c:forEach var="recentRun" items="${runs}">
                                     <tr class="clickable-row small border-bottom-1 border-dark" data-href="videos/run/${recentRun.id}">
-                                        <td><img src="${recentRun.game.imagePth}" alt="gameImage.png" /></td>
+                                        <td><img src="${recentRun.game.imagePth}" alt="gameImage.png" width="50" /></td>
                                         <td><a href="games/${recentRun.game.id}">${recentRun.game.title}</a></td>
                                         <td>${recentRun.category.categoryName}</td>
                                         <td><a href="profiles/${recentRun.user.userName}">${recentRun.user.userName}</a></td>

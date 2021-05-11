@@ -34,7 +34,7 @@
                     <table class="table">
                         <c:forEach var="run" items="${runs}">
                             <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/run/${run.id}">
-                                <td><img src="${run.game.imagePth}" alt="gameImage.png" /></td>
+                                <td><img src="${run.game.imagePth}" alt="gameImage.png" width="50"/></td>
                                 <td><a href="games/${run.game.id}">${run.game.title}</a></td>
                                 <td>${run.category.categoryName}</td>
                                 <td>${run.time}</td>
@@ -50,7 +50,7 @@
                     <table class="table">
                         <c:forEach var="tech" items="${techniques}">
                             <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/tech/${tech.id}">
-                                <td><img src="${tech.game.imagePth}" alt="gameImage.png" /></td>
+                                <td><img src="${tech.game.imagePth}" alt="gameImage.png" width="50"/></td>
                                 <td><a href="games/${tech.game.id}">${tech.game.title}</a></td>
                                 <td>${tech.title}</td>
                                 <td>${tech.description}</td>
