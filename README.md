@@ -23,6 +23,8 @@ In a standard speedrunning website one is able to submit and view speedruns on v
     * Log4J2
 * Hosting
     * AWS
+* Independent Research Topic/s
+    * Jquery Validation
 * Unit Testing
     * JUnit tests to achieve 100%+ code coverage
 * IDE: IntelliJ IDEA  
@@ -33,6 +35,9 @@ In a standard speedrunning website one is able to submit and view speedruns on v
 * [Screen Design](DesignDocuments/ScreenDesigns)
 * [Database Design](DesignDocuments/databaseDiagram.png)
 * [Minimal Viable Product Requirements](DesignDocuments/MVP.md)
+* [Time Log](DesignDocuments/timeLog.md)
+* [Demo Video](https://www.youtube.com/watch?v=VsIkzylfNwE)
+
 ##Project plan:
 
 2/11  Create jsp pages for home page, game list, and singular game page and java beans for 3 seperate databases;

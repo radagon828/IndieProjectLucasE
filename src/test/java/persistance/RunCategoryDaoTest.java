@@ -16,7 +16,16 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * The type Run category dao test.
+ *
+ * @author Lucas Eddy
+ */
 public class RunCategoryDaoTest {
+
+    /**
+     * The Dao.
+     */
     GenericDao dao;
 
     /**
@@ -31,7 +40,7 @@ public class RunCategoryDaoTest {
     }
 
     /**
-     * Verify successful retrieval of a Run
+     * Verify successful retrieval of a Run Category
      */
     @Test
     void getByIdSuccess() {
@@ -72,7 +81,7 @@ public class RunCategoryDaoTest {
     }
 
     /**
-     * Verify successful delete of Run
+     * Verify successful delete of Run Category
      */
     @Test
     void deleteSuccess() {
@@ -81,7 +90,7 @@ public class RunCategoryDaoTest {
     }
 
     /**
-     * Verify successful retrieval of all Run submissions
+     * Verify successful retrieval of all Run Categories
      */
     @Test
     void getAllSuccess() {

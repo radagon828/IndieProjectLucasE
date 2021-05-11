@@ -13,7 +13,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
+/**
+ * The type Run dao test.
+ *
+ * @author Lucas Eddy
+ */
 public class RunDaoTest {
+
+    /**
+     * The Dao.
+     */
     GenericDao dao;
 
     /**

@@ -15,7 +15,16 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * The type Technique dao test.
+ *
+ * @author Lucas Eddy
+ */
 public class TechniqueDaoTest {
+
+    /**
+     * The Dao.
+     */
     GenericDao dao;
 
     /**

@@ -11,8 +11,16 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 
+/**
+ * The type Game dao test.
+ *
+ * @author Lucas Eddy
+ */
 public class GameDaoTest {
 
+    /**
+     * The Dao.
+     */
     GenericDao dao;
 
     /**
@@ -81,6 +89,7 @@ public class GameDaoTest {
         assertNull(dao.getById(4));
         assertNull(runDao.getById(1));
     }
+
     /**
      * Verify successful retrieval of all games
      */
@@ -89,13 +98,5 @@ public class GameDaoTest {
         List<Game> games = dao.getAll();
         assertEquals(4, games.size());
     }
-
-//    @Test
-//    void getByTitleSuccess() {
-//        String value = "haunt";
-//        List<Game> games = dao.getByString("userName",value);
-//        System.out.println(games);
-//    }
-
 
 }

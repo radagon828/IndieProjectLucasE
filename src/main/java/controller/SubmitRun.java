@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * this servlet adds a new user
  *
- * @auther Lucas Eddy
+ * @author Lucas Eddy
  */
 @WebServlet(
         urlPatterns = {"/submitRun"}

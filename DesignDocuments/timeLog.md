@@ -21,3 +21,6 @@
 |04/30/2021|completed sign up functionality, added type datatype to technique table, added run category entity|2|
 |05/01/2021|Added ability to view individual videos and profile pages|4|
 |05/02/2021|Added ability to view game pages and a massive game list, added base href to head for easy app navigation|4|
+|05/04/2021|Added ability to submit tech and game videos, edit profile.|8|
+|05/11/2021|added approval column to run table, added approve controller, added ability for admin to approve runs, index page only displays approved runs, added javadoc all across app, successfully deployed app to aws.|6|
+|05/11/2021|Created Demo Video and linked it on README.md|0.5|

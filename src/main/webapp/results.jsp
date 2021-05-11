@@ -34,7 +34,7 @@
             <table class="table mt-3">
                 <c:forEach var="tech" items="${techniques}">
                     <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/tech/${tech.id}">
-                        <td><img src="${tech.game.imagePth}" alt="gameImage.png" /></td>
+                        <td><img src="${tech.game.imagePth}" alt="gameImage.png" width="25"/></td>
                         <td><a href="games/${tech.game.id}">${tech.game.title}</a></td>
                         <td>${tech.title}</td>
                         <td>${tech.description}</td>

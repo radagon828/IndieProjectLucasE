@@ -13,7 +13,16 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * The type User dao test.
+ *
+ * @author Lucas Eddy
+ */
 public class UserDaoTest {
+
+    /**
+     * The Dao.
+     */
     GenericDao dao;
 
     /**
@@ -84,6 +93,7 @@ public class UserDaoTest {
         assertNull(dao.getById(5));
         assertNull(runDao.getById(8));
     }
+
     /**
      * Verify successful retrieval of all games
      */
@@ -93,6 +103,9 @@ public class UserDaoTest {
         assertEquals(5, users.size());
     }
 
+    /**
+     * Gets user success.
+     */
     @Test
     void getUserSuccess() {
         List<User> user = dao.getByString("userName", "carci");

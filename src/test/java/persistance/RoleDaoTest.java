@@ -11,7 +11,16 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * The type Role dao test.
+ *
+ * @author Lucas Eddy
+ */
 public class RoleDaoTest {
+
+    /**
+     * The Dao.
+     */
     GenericDao dao;
 
     /**
