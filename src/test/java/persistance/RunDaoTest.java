@@ -60,7 +60,7 @@ public class RunDaoTest {
         int id = dao.insert(newRun);
         assertNotEquals(0,id);
         Run insertedRun = (Run)dao.getById(id);
-        assertEquals("A Ending, New Game +", insertedRun.getCategory().getCategoryName());
+        assertEquals(newRun , insertedRun);
     }
 
     /**

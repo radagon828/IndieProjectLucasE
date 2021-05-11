@@ -59,7 +59,7 @@ public class TechniqueDaoTest {
         int id = dao.insert(newTech);
         assertNotEquals(0,id);
         Technique insertedTech = (Technique)dao.getById(id);
-        assertEquals("Resident Evil Remake Commentary", insertedTech.getTitle());
+        assertEquals(newTech, insertedTech);
     }
 
     /**

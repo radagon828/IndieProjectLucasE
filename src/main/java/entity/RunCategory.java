@@ -47,11 +47,13 @@ public class RunCategory {
     /**
      * Instantiates a new Run category.
      *
-     * @param categoryName  the category name
-     * @param categoryRules the category rules
+     * @param categoryName    the category name
+     * @param categoryNameCon the category name con
+     * @param categoryRules   the category rules
      */
-    public RunCategory(String categoryName, String categoryRules) {
+    public RunCategory(String categoryName, String categoryNameCon, String categoryRules) {
         this.categoryName = categoryName;
+        this.categoryNameCon = categoryNameCon;
         this.categoryRules = categoryRules;
     }
 
@@ -169,13 +171,13 @@ public class RunCategory {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RunCategory that = (RunCategory) o;
-        return id == that.id && Objects.equals(categoryName, that.categoryName) && Objects.equals(categoryRules, that.categoryRules);
+        RunCategory category = (RunCategory) o;
+        return Objects.equals(categoryName, category.categoryName) && Objects.equals(categoryNameCon, category.categoryNameCon) && Objects.equals(categoryRules, category.categoryRules);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, categoryName, categoryRules);
+        return Objects.hash(categoryName, categoryNameCon, categoryRules);
     }
 
     @Override
@@ -183,14 +185,25 @@ public class RunCategory {
         return "RunCategory{" +
                 "id=" + id +
                 ", categoryName='" + categoryName + '\'' +
-                ", categoryRules=" + categoryRules +
+                ", categoryNameCon='" + categoryNameCon + '\'' +
+                ", categoryRules='" + categoryRules + '\'' +
                 '}';
     }
 
+    /**
+     * Gets category name con.
+     *
+     * @return the category name con
+     */
     public String getCategoryNameCon() {
         return categoryNameCon;
     }
 
+    /**
+     * Sets category name con.
+     *
+     * @param categoryNameCon the category name con
+     */
     public void setCategoryNameCon(String categoryNameCon) {
         this.categoryNameCon = categoryNameCon;
     }
