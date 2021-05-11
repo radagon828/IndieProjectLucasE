@@ -53,13 +53,17 @@ public class RunDaoTest {
         User user = (User)UserDao.getById(1);
         RunCategory category = (RunCategory)CategoryDao.getById(2);
 
-        Run newRun = new Run("01:20:32", "PS2", "" + formatter.format(date) + "", "https://www.youtube.com/watch?v=_81rRLpYFBU");
+
+
+        Run newRun = new Run("01:20:32", "PS2", "" + formatter.format(date)
+                + "", "https://www.youtube.com/watch?v=_81rRLpYFBU", "0");
         game.addRun(newRun);
         user.addRun(newRun);
         category.addRun(newRun);
         int id = dao.insert(newRun);
         assertNotEquals(0,id);
         Run insertedRun = (Run)dao.getById(id);
+        System.out.println(newRun.getVideoLink());
         assertEquals(newRun , insertedRun);
     }
 
@@ -92,4 +96,5 @@ public class RunDaoTest {
         List<Run> runs = dao.getAll();
         assertEquals(9, runs.size());
     }
+
 }

@@ -29,9 +29,6 @@ public class RunCategory {
     @Column(name= "category_rules")
     private String categoryRules;
 
-    @Column(name= "approval")
-    private int 0;
-
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name="game_id")

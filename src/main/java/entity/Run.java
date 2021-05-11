@@ -30,6 +30,9 @@ public class Run {
     @Column(name = "video_link")
     private String videoLink;
 
+    @Column(name= "approval")
+    private String approval;
+
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name="run_category_id")
@@ -53,11 +56,12 @@ public class Run {
      * @param date      the date
      * @param videoLink the video link
      */
-    public Run( String time, String platform, String date, String videoLink) {
+    public Run( String time, String platform, String date, String videoLink, String approval) {
         this.time = time;
         this.platform = platform;
         this.date = date;
         this.videoLink = videoLink;
+        this.approval = approval;
     }
 
     /**
@@ -209,6 +213,24 @@ public class Run {
      */
     public void setUser(User user) {
         this.user = user;
+    }
+
+    /**
+     * Gets approval.
+     *
+     * @return the approval
+     */
+    public String getApproval() {
+        return approval;
+    }
+
+    /**
+     * Sets approval.
+     *
+     * @param approval the approval
+     */
+    public void setApproval(String approval) {
+        this.approval = approval;
     }
 
     @Override

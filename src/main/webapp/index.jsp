@@ -11,7 +11,7 @@
 <%
 
         GenericDao runDao = new GenericDao(Run.class);
-        List<Run> runs = runDao.getAll();
+        List<Run> runs = runDao.getByString("approval", "1");
 
         GenericDao techDao = new GenericDao(Technique.class);
         List<Technique> techniques = techDao.getAll();

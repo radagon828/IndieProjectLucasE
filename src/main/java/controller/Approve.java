@@ -1,6 +1,7 @@
 package controller;
 
 import entity.Role;
+import entity.Run;
 import entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,34 +16,26 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * this servlet adds a new user
+ * this servlet deletes a run
  *
- * @auther Lucas Eddy
+ * @author Lucas Eddy
  */
 @WebServlet(
-        urlPatterns = {"/editProfile"}
+        urlPatterns = {"/approve"}
 )
-public class EditProfile extends HttpServlet {
+public class Approve extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        GenericDao userDao = new GenericDao(User.class);
-        GenericDao roleDao = new GenericDao(Role.class);
+        GenericDao runDao = new GenericDao(Run.class);
 
-        int userId = Integer.parseInt(req.getParameter("userId"));
-
-        User user = (User) userDao.getById(userId);
-        user.setUserName(req.getParameter("username"));
-        user.setUserEmail(req.getParameter("email"));
-
-        Role role = (Role) roleDao.getById(user.getRole().getId());
-        role.setUser_name(req.getParameter("username"));
-
-        userDao.saveOrUpdate(user);
-        roleDao.saveOrUpdate(role);
-        logger.debug("Edited user:", user);
+        int runId = Integer.parseInt(req.getParameter("runId"));
+        Run run = (Run) runDao.getById(runId);
+        run.setApproval("1");
+        runDao.saveOrUpdate(run);
+        logger.debug("Approving run: ", run);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req, resp);

@@ -37,6 +37,7 @@ public class DeleteRun extends HttpServlet {
         String confirm = req.getParameter("confirm");
         logger.debug("Deletion answer: ", confirm);
 
+
         if (confirm.equals("yes")) {
             logger.info("deleted run:", run);
             runDao.delete(run);

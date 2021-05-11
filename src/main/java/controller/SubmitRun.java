@@ -47,7 +47,7 @@ public class SubmitRun extends HttpServlet {
         RunCategory category = (RunCategory)CategoryDao.getById(categoryId);
 
         Run newRun = new Run(req.getParameter("time"), req.getParameter("platform"), "" + formatter.format(date) + "",
-                req.getParameter("videoLink"));
+                req.getParameter("videoLink"), "0");
 
         game.addRun(newRun);
         user.addRun(newRun);
