@@ -18,9 +18,22 @@ import java.util.List;
 import java.util.Set;
 
 
+/**
+ * The type Profile.
+ *
+ * @author Lucas Eddy
+ */
 @Path("/profiles")
 public class Profile {
 
+    /**
+     * Gets profile.
+     *
+     * @param userName the user name
+     * @param request  the request
+     * @param response the response
+     * @throws Exception the exception
+     */
     @GET
     @Path("{user_name}")
     public void getProfile(@PathParam("user_name") String userName,
@@ -42,6 +55,14 @@ public class Profile {
                 .forward(request, response);
     }
 
+    /**
+     * Gets edit profile.
+     *
+     * @param userName the user name
+     * @param request  the request
+     * @param response the response
+     * @throws Exception the exception
+     */
     @GET
     @Path("{user_name}/editProfile")
     public void getEditProfile(@PathParam("user_name") String userName,
@@ -66,6 +87,15 @@ public class Profile {
                 .forward(request, response);
     }
 
+    /**
+     * Gets delete run.
+     *
+     * @param userName the user name
+     * @param runId    the run id
+     * @param request  the request
+     * @param response the response
+     * @throws Exception the exception
+     */
     @GET
     @Path("{user_name}/{run_id}/deleteRun")
     public void getDeleteRun(@PathParam("user_name") String userName,

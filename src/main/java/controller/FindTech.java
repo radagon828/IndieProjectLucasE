@@ -17,10 +17,22 @@ import java.util.List;
 import java.util.Set;
 
 
+/**
+ * The type Find tech.
+ *
+ * @author Lucas Eddy
+ */
 @Path("/techniques")
 public class FindTech {
 
 
+    /**
+     * Gets games.
+     *
+     * @param request  the request
+     * @param response the response
+     * @throws Exception the exception
+     */
     @GET
     public void getGames(@Context HttpServletRequest request,
                          @Context HttpServletResponse response) throws Exception

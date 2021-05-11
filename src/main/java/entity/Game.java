@@ -10,6 +10,8 @@ import java.util.Set;
 
 /**
  * The type Game.
+ *
+ * @author Lucas Eddy
  */
 @Entity(name = "Game")
 @Table(name = "game")

@@ -16,6 +16,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Search.
+ *
+ *  @author Lucas Eddy
+ */
 @WebServlet(
         urlPatterns = {"/searchGame"}
 )

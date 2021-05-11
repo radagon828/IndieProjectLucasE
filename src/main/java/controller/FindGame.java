@@ -16,10 +16,22 @@ import java.util.List;
 import java.util.Set;
 
 
+/**
+ * The type Find game.
+ *
+ * @author Lucas Eddy
+ */
 @Path("/games")
 public class FindGame {
 
 
+    /**
+     * Gets games.
+     *
+     * @param request  the request
+     * @param response the response
+     * @throws Exception the exception
+     */
     @GET
     public void getGames(@Context HttpServletRequest request,
                              @Context HttpServletResponse response) throws Exception
@@ -33,6 +45,14 @@ public class FindGame {
                 .forward(request, response);
     }
 
+    /**
+     * Gets game.
+     *
+     * @param request  the request
+     * @param response the response
+     * @param gameId   the game id
+     * @throws Exception the exception
+     */
     @GET
     @Path("{game_id}")
     public void getGame(@Context HttpServletRequest request,
@@ -50,6 +70,14 @@ public class FindGame {
                 .forward(request, response);
     }
 
+    /**
+     * Gets run submit.
+     *
+     * @param request  the request
+     * @param response the response
+     * @param gameId   the game id
+     * @throws Exception the exception
+     */
     @GET
     @Path("{game_id}/submitRun")
     public void getRunSubmit(@Context HttpServletRequest request,
@@ -66,6 +94,14 @@ public class FindGame {
                 .forward(request, response);
     }
 
+    /**
+     * Gets technique submit.
+     *
+     * @param request  the request
+     * @param response the response
+     * @param gameId   the game id
+     * @throws Exception the exception
+     */
     @GET
     @Path("{game_id}/submitTech")
     public void getTechniqueSubmit(@Context HttpServletRequest request,

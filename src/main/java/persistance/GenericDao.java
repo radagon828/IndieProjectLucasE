@@ -17,11 +17,24 @@ import javax.persistence.criteria.Root;
 import java.sql.PreparedStatement;
 import java.util.List;
 
+/**
+ * The type Generic dao.
+ *
+ * @param <T> the type parameter
+ * @author Lucas Eddy
+ */
 public class GenericDao<T> {
     private Class<T> type;
     private final Logger logger = LogManager.getLogger(this.getClass());
+    /**
+     * The Session factory.
+     */
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
+    /**
+     * The Builder.
+     */
     CriteriaBuilder builder;
+
     /**
      * Instantiates a new Generic Dao.
      *
@@ -33,7 +46,9 @@ public class GenericDao<T> {
 
     /**
      * Get entity by id
-     * @param id entity to search by
+     *
+     * @param <T> the type parameter
+     * @param id  entity to search by
      * @return an entity
      */
     public <T>T getById(int id) {
@@ -45,10 +60,10 @@ public class GenericDao<T> {
     }
 
 
-
     /**
      * update entity
-     * @param entity
+     *
+     * @param entity the entity
      */
     public void saveOrUpdate(T entity) {
         logger.info("updating from: " + type);
@@ -61,7 +76,9 @@ public class GenericDao<T> {
 
     /**
      * insert entity
-     * @param entity
+     *
+     * @param entity the entity
+     * @return the int
      */
     public int insert(T entity) {
         logger.info("inserting into: " + type);
@@ -76,6 +93,7 @@ public class GenericDao<T> {
 
     /**
      * Delete an entity
+     *
      * @param entity entity to be deleted
      */
     public void delete(T entity) {
@@ -87,7 +105,8 @@ public class GenericDao<T> {
         session.close();
     }
 
-    /** Return a list of all the entities
+    /**
+     * Return a list of all the entities
      *
      * @return All entities
      */
@@ -105,6 +124,13 @@ public class GenericDao<T> {
         return list;
     }
 
+    /**
+     * Gets by string.
+     *
+     * @param propertyName the property name
+     * @param searchWord   the search word
+     * @return the by string
+     */
     public List<T> getByString(String propertyName, String searchWord) {
         Session session = getSession();
 

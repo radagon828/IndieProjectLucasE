@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * The type Login action.
+ *
+ * @author Lucas Eddy
+ */
 @WebServlet(
         urlPatterns = {"/loginAction"}
 )

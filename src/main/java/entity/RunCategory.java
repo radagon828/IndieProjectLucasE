@@ -10,6 +10,8 @@ import java.util.Set;
 
 /**
  * The type Run category.
+ *
+ * @author Lucas Eddy
  */
 @Entity(name = "RunCategory")
 @Table(name = "run_category")

@@ -8,6 +8,8 @@ import java.util.Objects;
 
 /**
  * The type Role.
+ *
+ * @author Lucas Eddy
  */
 @Entity(name = "Role")
 @Table(name = "role")

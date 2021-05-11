@@ -17,7 +17,7 @@ import java.io.IOException;
 /**
  * this servlet adds a new user
  *
- * @auther Lucas Eddy
+ * @author Lucas Eddy
  */
 @WebServlet(
         urlPatterns = {"/signUp"}

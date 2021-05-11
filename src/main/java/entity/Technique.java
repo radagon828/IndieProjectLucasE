@@ -8,6 +8,8 @@ import java.util.Objects;
 
 /**
  * The type Technique.
+ *
+ * @author Lucas Eddy
  */
 @Entity(name = "Technique")
 @Table(name = "technique")

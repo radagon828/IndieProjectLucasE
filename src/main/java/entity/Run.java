@@ -8,6 +8,8 @@ import java.util.Objects;
 
 /**
  * The type Run.
+ *
+ * @author Lucas Eddy
  */
 @Entity(name = "Run")
 @Table(name = "run")

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * this servlet deletes a run
+ * this servlet approves a run
  *
  * @author Lucas Eddy
  */

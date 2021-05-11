@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * this servlet adds a new user
+ * this servlet edits a current user
  *
- * @auther Lucas Eddy
+ * @author Lucas Eddy
  */
 @WebServlet(
         urlPatterns = {"/editProfile"}

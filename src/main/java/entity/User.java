@@ -9,6 +9,8 @@ import java.util.Set;
 
 /**
  * The type User.
+ *
+ * @author Lucas Eddy
  */
 @Entity(name = "User")
 @Table(name = "user")

@@ -15,9 +15,22 @@ import entity.User;
 import persistance.GenericDao;
 
 
+/**
+ * The type Video.
+ *
+ * @author Lucas Eddy
+ */
 @Path("/videos")
 public class Video {
 
+    /**
+     * Gets tech.
+     *
+     * @param request  the request
+     * @param response the response
+     * @param videoId  the video id
+     * @throws Exception the exception
+     */
     @GET
     @Path("tech/{video_id}")
     public void getTech(@Context HttpServletRequest request,
@@ -32,6 +45,14 @@ public class Video {
                 .forward(request, response);
     }
 
+    /**
+     * Gets run.
+     *
+     * @param request  the request
+     * @param response the response
+     * @param videoId  the video id
+     * @throws Exception the exception
+     */
     @GET
     @Path("run/{video_id}")
     public void getRun(@Context HttpServletRequest request,
