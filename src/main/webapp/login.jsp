@@ -33,7 +33,8 @@
 <script>
     function encryptPassword() {
         let rawPassField = document.getElementById("rawPass").value;
-        document.getElementById("jPass").value = rawPassField;
+        let conPass = MD5(rawPassField);
+        document.getElementById("jPass").value = conPass;
 
         document.getElementById("loginForm").submit();
     }
