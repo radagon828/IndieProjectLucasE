@@ -13,21 +13,29 @@
 <body>
     <%@ include file="navbar.jsp"%>
     <div class="container mt-2">
-
-            <FORM ACTION="j_security_check" METHOD="POST">
+            <FORM ACTION="j_security_check" METHOD="POST" id="loginForm">
                 <TABLE>
                     <div class="form-group">
                         <TR><TD>User name: <INPUT TYPE="TEXT" NAME="j_username" /></TD></TR>
                     </div>
                     <div class="form-group">
-                        <TR><TD>Password: <INPUT TYPE="PASSWORD" NAME="j_password" /></TD></TR>
+                        <INPUT TYPE="PASSWORD" NAME="j_password" id="jPass" hidden />
+                        <TR><TD>Password: <INPUT TYPE="PASSWORD" NAME="raw_password" id="rawPass"/></TD></TR>
                     </div>
                     <div class="form-group">
-                        <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In">
+                        <TR><TH><INPUT TYPE="button" onclick="encryptPassword()" VALUE="Log In">
                     </div>
                 </TABLE>
             </FORM>
 
     </div>
 </body>
+<script>
+    function encryptPassword() {
+        let rawPassField = document.getElementById("rawPass").value;
+        document.getElementById("jPass").value = rawPassField;
+
+        document.getElementById("loginForm").submit();
+    }
+</script>
 </html>

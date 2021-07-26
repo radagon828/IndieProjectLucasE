@@ -1,6 +1,7 @@
 package persistance;
 
 
+import controller.MD5Digest;
 import entity.Role;
 import entity.Run;
 import entity.User;
@@ -44,7 +45,11 @@ public class UserDaoTest {
         User retrievedUser = (User)dao.getById(1);
         assertEquals("sonic", retrievedUser.getUserName());
     }
-
+    @Test
+    void testStringConversion() throws Exception {
+        MD5Digest theObject = new MD5Digest();
+        theObject.convertString("11111");
+    }
     /**
      * Verify successful insert of a Game
      */

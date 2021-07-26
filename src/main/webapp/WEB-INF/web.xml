@@ -15,6 +15,7 @@
 
     <login-config>
         <auth-method>FORM</auth-method>
+        <realm-name>UserDatabase</realm-name>
         <form-login-config>
             <form-login-page>/login.jsp</form-login-page>
             <form-error-page>/failedLogin.jsp</form-error-page>
