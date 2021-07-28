@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 
 public class MD5Digest {
 
-    public void convertString(String pass) throws Exception {
+    public String convertString(String pass) throws Exception {
 
 //        if (args.length != 1) {
 //            System.err.println("String to MD5 digest should be first and only parameter");
@@ -18,9 +18,9 @@ public class MD5Digest {
         for (byte b : digest) {
             sb.append(String.format("%02x", b & 0xff));
         }
+        String finalPass = sb.toString();
 
-        System.out.println("original:" + original);
-        System.out.println("digested(hex):" + sb.toString());
+        return finalPass;
     }
 
 }

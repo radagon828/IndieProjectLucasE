@@ -29,13 +29,20 @@ public class SignUp extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         GenericDao userDao = new GenericDao(User.class);
-
+        String userPass = req.getParameter("password");
         User user = new User();
         user.setUserName(req.getParameter("username"));
         user.setUserEmail(req.getParameter("email"));
 
         //secure password
-        user.setPassword(req.getParameter("password"));
+        MD5Digest converter = new MD5Digest();
+
+        try {
+            userPass = converter.convertString(userPass);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        user.setPassword(userPass);
 
         Role role = new Role("user", user.getUserName());
 
