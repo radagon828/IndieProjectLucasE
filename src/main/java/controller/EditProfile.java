@@ -27,18 +27,32 @@ public class EditProfile extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
         GenericDao userDao = new GenericDao(User.class);
+        MD5Digest converter = new MD5Digest();
 
         int userId = Integer.parseInt(req.getParameter("userId"));
+        String editParam = req.getParameter("editField");
 
         User user = (User) userDao.getById(userId);
-        user.setUserEmail(req.getParameter("email"));
+
+        if (editParam.equals("name")) {
+            user.setUserName(req.getParameter("username"));
+        } else if (editParam.equals("email")) {
+            user.setUserEmail(req.getParameter("email"));
+        } else if (editParam.equals("pass")) {
+            String userPass = "";
+            try {
+                userPass = converter.convertString(req.getParameter("password"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            user.setPassword(userPass);
+        }
 
         userDao.saveOrUpdate(user);
         logger.debug("Edited user:", user);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/editProfileSuccess.jsp");
         dispatcher.forward(req, resp);
     }
 }
