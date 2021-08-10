@@ -12,12 +12,12 @@
 
 <body>
 <%@ include file="navbar.jsp"%>
-<div class="panel panel-default bg-light">
+<div class="panel panel-default bg-light m-2">
     <form id="signUpForm" method="post" action="editProfile">
         <input id="userIdTwo" name="userId" minlength="4" type="text" value="${profile.id}" required hidden>
         <input id="editFieldEmail" name="editField" value="email" hidden>
         <p>
-            <label for="email">Change E-Mail - Current: ${profile.userEmail}</label>
+            <label for="email">Change E-Mail - Current: ${profile.userEmail}</label><br>
             <input id="email" type="email" name="email" required>
         </p>
         <p>
@@ -25,7 +25,7 @@
         </p>
     </form>
 </div>
-<div class="panel panel-default bg-light">
+<div class="panel panel-default bg-light m-2">
     <form id="signUpFormTwo" method="post" action="editProfile">
         <input id="userIdThree" name="userId" minlength="4" type="text" value="${profile.id}" required hidden>
         <input id="editFieldPass" name="editField" value="pass" hidden>

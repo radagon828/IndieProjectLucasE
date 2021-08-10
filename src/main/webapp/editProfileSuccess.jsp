@@ -12,6 +12,6 @@
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
-<p>Your Profile was changed! Go back to <a href="profiles/${pageContext.request.remoteUser}">profile page?</a>a></p>
+<p>Your Profile was changed! Go back to <a href="profiles/${pageContext.request.remoteUser}">profile page?</a></p>
 </body>
 </html>

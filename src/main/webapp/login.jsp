@@ -12,7 +12,7 @@
 </head>
 <body>
     <%@ include file="navbar.jsp"%>
-    <div class="container mt-2">
+    <div class="panel panel-default bg-light m-2">
             <FORM ACTION="j_security_check" METHOD="POST" id="loginForm">
                 <TABLE>
                     <div class="form-group">
