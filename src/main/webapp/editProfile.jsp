@@ -9,7 +9,8 @@
 <html>
 
 <%@include file="head.jsp"%>
-
+<script src="js/jquery.validate.js"></script>
+<script src="js/sign-up.js"></script>
 <body>
 <%@ include file="navbar.jsp"%>
 <div class="panel panel-default bg-light m-2">

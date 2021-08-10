@@ -36,7 +36,7 @@
                 </div>
 
                 <p>
-                    <button class="button" onclick="convertUrl()" value="Submit" />
+                    <input type="button" onclick="convertUrl()" value="Submit" />
                 </p>
             </form>
         </div>

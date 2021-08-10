@@ -3,6 +3,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="entity.Technique" %>
+<%@ page import="java.util.Collections" %>
+<%@ page import="java.util.Comparator" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -10,15 +12,26 @@
 <c:set var="myTitle" value="Home" />
 <%
 
-        GenericDao runDao = new GenericDao(Run.class);
-        List<Run> runs = runDao.getByString("approval", "1");
+    GenericDao runDao = new GenericDao(Run.class);
+    List<Run> runs = runDao.getByString("approval", "1");
 
-        GenericDao techDao = new GenericDao(Technique.class);
-        List<Technique> techniques = techDao.getAll();
+    GenericDao techDao = new GenericDao(Technique.class);
+    List<Technique> techniques = techDao.getAll();
 
+    Collections.sort(runs, new Comparator<Run>() {
+        public int compare(Run run, Run t1) {
+            return run.getDate().compareTo(t1.getDate());
+        }
+    });
 
-        request.setAttribute("techniques", techniques);
-        request.setAttribute("runs", runs);
+    Collections.sort(techniques, new Comparator<Technique>() {
+        public int compare(Technique technique, Technique t1) {
+            return technique.getSubmissionDate().compareTo(t1.getSubmissionDate());
+        }
+    });
+
+    request.setAttribute("techniques", techniques);
+    request.setAttribute("runs", runs);
 %>
 
 <html lang="en">
