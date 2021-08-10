@@ -1,6 +1,11 @@
+<%@ page import="entity.Run" %>
+<%@ page import="jdk.jfr.Category" %>
+<%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="p" uri="/WEB-INF/run.tld" %>
+
 <html lang="en">
 <head>
 <%@include file="head.jsp"%>
@@ -69,7 +74,9 @@
                                     <th>Platform</th>
                                     <th>Submission Date</th>
                                 </tr>
-                                <c:forEach var="run" items="${content.runs}">
+                                <c:set var="runs" value="${content.runs}"/>
+
+                                <c:forEach var="run" items="${p:sortByTime(runs)}">
                                     <tr class="clickable-row border-bottom-1 border-dark" data-href="videos/run/${run.id}">
                                         <td>${run.user.userName}</td>
                                         <td>${run.time}</td>
