@@ -27,6 +27,7 @@ public class EditProfile extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
         GenericDao userDao = new GenericDao(User.class);
 
         int userId = Integer.parseInt(req.getParameter("userId"));
