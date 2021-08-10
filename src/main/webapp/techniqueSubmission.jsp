@@ -31,14 +31,35 @@
                 </div>
                 <div class="form-group">
                     <label for="videoLink">Embedded Youtube Link*</label>
-                    <input id="videoLink" name="videoLink" type="videoLink" required>
+                    <input id="videoLink" name="videoLink" hidden>
+                    <input id="videoLinkRaw" name="videoLinkRaw" type="videoLink" required>
                 </div>
+
                 <p>
-                    <input class="submit" type="submit" value="Submit">
+                    <button class="button" onclick="convertUrl()" value="Submit" />
                 </p>
             </form>
         </div>
     </div>
 </div>
 </body>
+<script>
+    function getId(url) {
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        const match = url.match(regExp);
+
+        return (match && match[2].length === 11)
+            ? match[2]
+            : null;
+    }
+
+    function convertUrl() {
+        let rawUrlField = document.getElementById("videoLinkRaw").value;
+        let videoId = getId(rawUrlField);
+        let embeddedUrl = "//www.youtube.com/embed/" + videoId;
+        document.getElementById("videoLink").value = embeddedUrl;
+
+        document.getElementById("submitRunForm").submit();
+    }
+</script>
 </html>

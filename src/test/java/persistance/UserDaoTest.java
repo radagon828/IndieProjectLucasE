@@ -117,4 +117,15 @@ public class UserDaoTest {
         System.out.println(user.get(0));
     }
 
+    /**
+     * Gets user success.
+     */
+    @Test
+    void getNewPass() throws Exception {
+        MD5Digest pass = new MD5Digest();
+        String newPass = pass.convertString("test1");
+
+        System.out.println(newPass);
+    }
+
 }
