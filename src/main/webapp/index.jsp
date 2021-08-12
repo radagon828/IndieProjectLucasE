@@ -5,6 +5,7 @@
 <%@ page import="entity.Technique" %>
 <%@ page import="java.util.Collections" %>
 <%@ page import="java.util.Comparator" %>
+<%@ page import="java.util.stream.Collectors" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -30,8 +31,24 @@
         }
     });
 
-    request.setAttribute("techniques", techniques);
-    request.setAttribute("runs", runs);
+    List<Run> finRuns = new ArrayList<>();
+    List<Technique> finTech = new ArrayList<>();
+
+    for (Run run : runs) {
+        finRuns.add(run);
+        if (finRuns.size() > 4) {
+            break;
+        }
+    }
+
+    for (Technique tech : techniques) {
+        finTech.add(tech);
+        if (finTech.size() > 0) {
+            break;
+        }
+    }
+    request.setAttribute("techniques", finTech);
+    request.setAttribute("runs", finRuns);
 %>
 
 <html lang="en">
