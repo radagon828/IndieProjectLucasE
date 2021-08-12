@@ -43,7 +43,7 @@
 
     for (Technique tech : techniques) {
         finTech.add(tech);
-        if (finTech.size() > 0) {
+        if (finTech.size() > 20) {
             break;
         }
     }

@@ -28,7 +28,7 @@
     <div class="row">
         <div class="col-sm-6 mt-2">
             <div class="panel panel-default bg-light">
-                <div class="panel-heading">Latest Techniques</div>
+                <div class="panel-heading">Latest Runs</div>
                 <div class="panel-body">
                     <table class="table">
                         <c:forEach var="run" items="${runs}">

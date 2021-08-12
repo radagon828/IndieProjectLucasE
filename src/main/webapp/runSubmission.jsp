@@ -31,7 +31,7 @@
                     <input id="time" name="time" type="runTime" required>
                 </div>
                 <div class="form-group">
-                    <label for="videoLink">Embedded Youtube Link*</label>
+                    <label for="videoLink">Youtube Link*</label>
                     <input id="videoLink" name="videoLink" hidden>
                     <input id="videoLinkRaw" name="videoLinkRaw" type="videoLink" required>
                 </div>
